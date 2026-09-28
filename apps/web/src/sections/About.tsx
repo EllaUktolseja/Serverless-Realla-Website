@@ -16,7 +16,7 @@ function About() {
       <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr]">
         <div className="rounded-3xl border border-border bg-card p-7 sm:p-9">
           <p className="text-lg leading-8 text-foreground/85">
-            {profile.bio ||
+            {profile?.bio ||
               "I’m a computer science student who enjoys turning ideas into working software. My interests sit around full-stack development, backend systems, databases, and the engineering practices that make projects easier to maintain."}
           </p>
           <p className="mt-6 leading-7 text-muted-foreground">
