@@ -1,8 +1,7 @@
 import { getProfile } from "@/services/api";
-import type { Profile } from "@/types/portfolio";
 
 function Hero() {
-  const profile: Profile = getProfile();
+  const profile = getProfile();
 
   const name = profile?.name ?? "Your Name";
   const headline = profile?.headline ?? "Undergraduate Software Engineer";
