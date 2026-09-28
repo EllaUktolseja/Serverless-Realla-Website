@@ -1,8 +1,15 @@
+import { useEffect, useState } from "react";
+
 import Section from "@/components/Section";
 import { getProfile } from "@/services/api";
+import type { Profile } from "@/types/portfolio";
 
 function About() {
-  const profile = getProfile();
+  const [profile, setProfile] = useState<Profile | null>(null);
+
+  useEffect(() => {
+    void getProfile().then(setProfile).catch(() => undefined);
+  }, []);
 
   return (
     <Section id="about" eyebrow="About me" title="Curious about how things work — and how to make them better.">
