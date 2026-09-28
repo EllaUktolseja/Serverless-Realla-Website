@@ -1,5 +1,4 @@
 import type {
-  ContactInput,
   Education,
   Experience,
   Profile,
@@ -9,10 +8,7 @@ import type {
 
 /**
  * Static portfolio data for the frontend deployment.
- *
- * The portfolio is intentionally deployable without a runtime API dependency.
- * This keeps the public website available even while the backend/serverless
- * function is being configured separately.
+ * No runtime API, serverless function, or database is required.
  */
 
 const profile: Profile = {
@@ -65,4 +61,89 @@ const educations: Education[] = [
   },
 ];
 
-const skills: Skill[] = [\n  { name: "TypeScript", category: "Languages", level: "Working", yearsOfExperience: 2, sortOrder: 1 },\n  { name: "JavaScript", category: "Languages", level: "Working", yearsOfExperience: 2, sortOrder: 2 },\n  { name: "React", category: "Frontend", level: "Working", yearsOfExperience: 2, sortOrder: 3 },\n  { name: "Next.js", category: "Frontend", level: "Learning", yearsOfExperience: 1, sortOrder: 4 },\n  { name: "Tailwind CSS", category: "Frontend", level: "Working", yearsOfExperience: 2, sortOrder: 5 },\n  { name: "Node.js", category: "Backend", level: "Working", yearsOfExperience: 2, sortOrder: 6 },\n  { name: "Express", category: "Backend", level: "Working", yearsOfExperience: 1, sortOrder: 7 },\n  { name: "NestJS", category: "Backend", level: "Learning", yearsOfExperience: 1, sortOrder: 8 },\n  { name: "MongoDB", category: "Databases", level: "Working", yearsOfExperience: 1, sortOrder: 9 },\n  { name: "PostgreSQL", category: "Databases", level: "Learning", yearsOfExperience: 1, sortOrder: 10 },\n  { name: "Prisma", category: "Databases", level: "Learning", yearsOfExperience: 1, sortOrder: 11 },\n  { name: "Docker", category: "Tools", level: "Working", yearsOfExperience: 1, sortOrder: 12 },\n  { name: "Git & GitHub", category: "Tools", level: "Working", yearsOfExperience: 2, sortOrder: 13 },\n];\n
+const skills: Skill[] = [
+  { name: "TypeScript", category: "Languages", level: "Working", yearsOfExperience: 2, sortOrder: 1 },
+  { name: "JavaScript", category: "Languages", level: "Working", yearsOfExperience: 2, sortOrder: 2 },
+  { name: "React", category: "Frontend", level: "Working", yearsOfExperience: 2, sortOrder: 3 },
+  { name: "Next.js", category: "Frontend", level: "Learning", yearsOfExperience: 1, sortOrder: 4 },
+  { name: "Tailwind CSS", category: "Frontend", level: "Working", yearsOfExperience: 2, sortOrder: 5 },
+  { name: "Node.js", category: "Backend", level: "Working", yearsOfExperience: 2, sortOrder: 6 },
+  { name: "Express", category: "Backend", level: "Working", yearsOfExperience: 1, sortOrder: 7 },
+  { name: "NestJS", category: "Backend", level: "Learning", yearsOfExperience: 1, sortOrder: 8 },
+  { name: "MongoDB", category: "Databases", level: "Working", yearsOfExperience: 1, sortOrder: 9 },
+  { name: "PostgreSQL", category: "Databases", level: "Learning", yearsOfExperience: 1, sortOrder: 10 },
+  { name: "Prisma", category: "Databases", level: "Learning", yearsOfExperience: 1, sortOrder: 11 },
+  { name: "Docker", category: "Tools", level: "Working", yearsOfExperience: 1, sortOrder: 12 },
+  { name: "Git & GitHub", category: "Tools", level: "Working", yearsOfExperience: 2, sortOrder: 13 },
+];
+
+const projects: Project[] = [
+  {
+    slug: "realla-web",
+    name: "Realla Web",
+    description:
+      "Personal portfolio website focused on professional identity, experience, projects, and direct connections.",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    githubUrl: "https://github.com/EllaUktolseja/realla-web",
+    liveUrl: "",
+    sortOrder: 1,
+  },
+  {
+    slug: "gy-o-real-e-commerce",
+    name: "GY-O-REAL E-Commerce",
+    description:
+      "Full-stack e-commerce project with a modern storefront, REST API, PostgreSQL, Prisma, and Docker-based development.",
+    technologies: ["Next.js", "NestJS", "PostgreSQL", "Prisma"],
+    githubUrl: "https://github.com/EllaUktolseja/GY-O-REAL-E-Commerce",
+    liveUrl: "",
+    sortOrder: 2,
+  },
+  {
+    slug: "foodfoundry",
+    name: "FoodFoundry",
+    description:
+      "Community-focused cookie showcase and feedback platform designed around real-world product validation.",
+    technologies: ["Next.js", "NestJS", "PostgreSQL", "Prisma"],
+    githubUrl: "https://github.com/EllaUktolseja/FoodFoundry",
+    liveUrl: "",
+    sortOrder: 3,
+  },
+  {
+    slug: "meatloop",
+    name: "Meatloop",
+    description:
+      "Food-waste marketplace prototype designed for Indonesian Gen Z users with a focused mobile-first interface.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    githubUrl: "",
+    liveUrl: "",
+    sortOrder: 4,
+  },
+  {
+    slug: "supply-chain-monitor",
+    name: "Supply Chain Monitor",
+    description:
+      "Monitoring-oriented software project exploring dashboards, service workflows, and operational visibility.",
+    technologies: ["React", "TypeScript", "Node.js"],
+    githubUrl: "",
+    liveUrl: "",
+    sortOrder: 5,
+  },
+];
+
+export const getProfile = () => Promise.resolve(profile);
+
+export const getExperiences = () => Promise.resolve(experiences);
+
+export const getEducations = () => Promise.resolve(educations);
+
+export const getSkills = () => Promise.resolve(skills);
+
+export const getProjects = () =>
+  Promise.resolve([...projects].sort((a, b) => a.sortOrder - b.sortOrder));
+
+export const getProjectBySlug = (slug: string) => {
+  const project = projects.find((item) => item.slug === slug);
+  return project
+    ? Promise.resolve(project)
+    : Promise.reject(new Error("Project not found."));
+};
