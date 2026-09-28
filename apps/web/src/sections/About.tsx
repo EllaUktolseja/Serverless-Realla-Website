@@ -1,9 +1,8 @@
 import Section from "@/components/Section";
 import { getProfile } from "@/services/api";
-import type { Profile } from "@/types/portfolio";
 
 function About() {
-  const profile: Profile = getProfile();
+  const profile = getProfile();
 
   return (
     <Section id="about" eyebrow="About me" title="Curious about how things work — and how to make them better.">
