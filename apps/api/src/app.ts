@@ -3,6 +3,7 @@ import "./config/env.js";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
+import type { RequestHandler } from "express";
 
 import { env } from "./config/env.js";
 import profileRoutes from "./routes/profile.routes.js";
@@ -23,7 +24,9 @@ const app = express();
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
 
-app.use(helmet());
+const helmetMiddleware = helmet as unknown as () => RequestHandler;
+
+app.use(helmetMiddleware());
 
 app.use(
   cors({
