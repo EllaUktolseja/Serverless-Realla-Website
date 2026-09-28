@@ -2,7 +2,7 @@ let databasePromise = null;
 
 async function ensureDatabaseConnection() {
   if (!databasePromise) {
-    const { connectDatabase } = await import("../apps/api/src/config/database.js");
+    const { connectDatabase } = await import("../apps/api/dist/config/database.js");
 
     databasePromise = connectDatabase().catch((error) => {
       databasePromise = null;
@@ -15,9 +15,9 @@ async function ensureDatabaseConnection() {
 
 export default async function handler(req, res) {
   const [{ default: app }] = await Promise.all([
-    import("../apps/api/src/app.js"),
+    import("../apps/api/dist/app.js"),
     ensureDatabaseConnection(),
   ]);
 
-  app(req, res);
+  return app(req, res);
 }
