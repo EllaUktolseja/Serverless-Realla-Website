@@ -1,7 +1,14 @@
+import { useEffect, useState } from "react";
+
 import { getProfile } from "@/services/api";
+import type { Profile } from "@/types/portfolio";
 
 function Hero() {
-  const profile = getProfile();
+  const [profile, setProfile] = useState<Profile | null>(null);
+
+  useEffect(() => {
+    void getProfile().then(setProfile).catch(() => undefined);
+  }, []);
 
   const name = profile?.name ?? "Your Name";
   const headline = profile?.headline ?? "Undergraduate Software Engineer";
