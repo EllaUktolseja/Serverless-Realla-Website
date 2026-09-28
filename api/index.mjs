@@ -1,9 +1,17 @@
+import app from "../apps/api/src/app.js";
+import { connectDatabase } from "../apps/api/src/config/database.js";
+
 let databasePromise = null;
+
+function needsDatabase(pathname) {
+  return !(
+    pathname === "/api/v1/health" ||
+    pathname === "/api/v1/health/live"
+  );
+}
 
 async function ensureDatabaseConnection() {
   if (!databasePromise) {
-    const { connectDatabase } = await import("../apps/api/dist/config/database.js");
-
     databasePromise = connectDatabase().catch((error) => {
       databasePromise = null;
       throw error;
@@ -14,10 +22,11 @@ async function ensureDatabaseConnection() {
 }
 
 export default async function handler(req, res) {
-  const [{ default: app }] = await Promise.all([
-    import("../apps/api/dist/app.js"),
-    ensureDatabaseConnection(),
-  ]);
+  const pathname = new URL(req.url ?? "/", "https://vercel.local").pathname;
+
+  if (needsDatabase(pathname)) {
+    await ensureDatabaseConnection();
+  }
 
   return app(req, res);
 }
