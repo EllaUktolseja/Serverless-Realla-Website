@@ -65,7 +65,7 @@ const educations: Education[] = [
   },
 ];
 
-const skills: Skill[] = [
+const skillSeed: Array<[string, string, string, number]> = [
   ["TypeScript", "Languages", "Working", 2],
   ["JavaScript", "Languages", "Working", 2],
   ["React", "Frontend", "Working", 2],
@@ -86,6 +86,8 @@ const skills: Skill[] = [
   yearsOfExperience,
   sortOrder: index + 1,
 }));
+
+const skills: Skill[] = skillSeed;
 
 const projects: Project[] = [
   {
