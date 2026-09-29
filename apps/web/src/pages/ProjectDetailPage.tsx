@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Footer from "@/sections/Footer";
-import { getProjectBySlug } from "@/services/api";
+import { getProjectBySlug } from "@/data/portfolio";
 import type { Project } from "@/types/portfolio";
 
 interface ProjectDetailPageProps {
