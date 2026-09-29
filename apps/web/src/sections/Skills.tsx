@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Section from "@/components/Section";
-import { getSkills } from "@/services/api";
+import { getSkills } from "@/data/portfolio";
 import type { Skill } from "@/types/portfolio";
 
 function Skills() {
