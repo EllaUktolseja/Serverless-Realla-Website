@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Section from "@/components/Section";
-import { getEducations, getExperiences } from "@/services/api";
+import { getEducations, getExperiences } from "@/data/portfolio";
 import type { Education, Experience as ExperienceData } from "@/types/portfolio";
 
 function Experience() {
