@@ -102,7 +102,7 @@ function Hero() {
                     </div>
                     <div className="grid gap-2 font-mono text-[10px] text-white/60">
                       <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">✓ React + TypeScript</div>
-                      <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">✓ REST API + MongoDB</div>
+                      <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">✓ React + modern web</div>
                       <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">→ always improving</div>
                     </div>
                   </div>
