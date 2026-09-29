@@ -12,6 +12,7 @@ const profile: Profile = {
   bio: "Computer science student building full-stack web applications with TypeScript, React, Node.js, and modern backend tooling. I enjoy learning by turning ideas into products.",
   email: "agatha.uktolseja@gmail.com",
   location: "Bekasi, Indonesia",
+  imageUrl: "/images/profilePict.jpg",
   linkedinUrl: "https://www.linkedin.com/in/ellauktolseja/",
   githubUrl: "https://github.com/EllaUktolseja",
   whatsappUrl: "https://wa.me/6285710304280",
