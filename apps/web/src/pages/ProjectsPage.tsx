@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Footer from "@/sections/Footer";
-import { getProjects } from "@/services/api";
+import { getProjects } from "@/data/portfolio";
 import type { Project, ProjectStatus } from "@/types/portfolio";
 
 const statusMeta: Record<ProjectStatus, { label: string }> = {
