@@ -11,11 +11,20 @@ const links = [
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [pathname, setPathname] = useState(window.location.pathname);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handlePopState = () => setPathname(window.location.pathname);
+    const handleScroll = () => setScrolled(window.scrollY > 18);
+
     window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   function navigate(event: MouseEvent<HTMLAnchorElement>, href: string) {
@@ -32,36 +41,54 @@ function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-border/80 bg-background/80 px-3 shadow-lg shadow-foreground/[0.03] backdrop-blur-2xl sm:px-4">
-        <a href="/" onClick={(event) => navigate(event, "/")} className="group flex shrink-0 items-center gap-3 px-2">
+    <header className="pointer-events-none sticky top-0 z-50 px-3 pt-3 sm:px-5">
+      <div
+        className={[
+          "relative mx-auto flex max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-[1.35rem] border px-2 transition-all duration-500 pointer-events-auto",
+          scrolled
+            ? "min-h-14 border-white/60 bg-card/62 shadow-2xl shadow-foreground/[0.08] backdrop-blur-2xl"
+            : "min-h-16 border-border/80 bg-background/78 shadow-lg shadow-foreground/[0.04] backdrop-blur-xl",
+        ].join(" ")}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_20%,oklch(0.96_0.02_293_/_0.65)_42%,oklch(0.78_0.12_293_/_0.12)_52%,transparent_72%)] opacity-80" />
+        <div className="pointer-events-none absolute inset-x-8 bottom-0 h-px bg-[linear-gradient(90deg,transparent,oklch(0.52_0.24_293_/_0.45),transparent)]" />
+
+        <a href="/" onClick={(event) => navigate(event, "/")} className="group relative z-10 flex shrink-0 items-center gap-3 px-2.5">
           <span className="grid size-9 place-items-center rounded-xl bg-foreground text-sm font-black text-background shadow-sm transition duration-300 group-hover:rotate-[-6deg] group-hover:scale-105">R</span>
           <span className="text-[15px] font-black tracking-[-0.02em]">Realla<span className="text-primary">.</span></span>
         </a>
 
-        <nav className="hidden items-center gap-1 rounded-xl bg-muted/70 p-1 md:flex">
-          {links.map(([href, label]) => (
-            <a key={href} href={href} onClick={(event) => navigate(event, href)}
-              className={`relative rounded-lg px-3.5 py-2 text-[12px] font-bold transition-all lg:px-4 ${isActive(href) ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
-              {label}
-              {isActive(href) && <span className="absolute inset-x-3 -bottom-0.5 mx-auto h-px bg-primary" />}
-            </a>
-          ))}
+        <nav className="relative z-10 hidden items-center gap-1 rounded-xl border border-white/45 bg-white/35 p-1 shadow-inner backdrop-blur md:flex dark:bg-white/5">
+          {links.map(([href, label]) => {
+            const active = isActive(href);
+
+            return (
+              <a key={href} href={href} onClick={(event) => navigate(event, href)}
+                className={[
+                  "relative rounded-lg px-3.5 py-2 text-[12px] font-bold transition-all lg:px-4",
+                  active ? "bg-card/90 text-foreground shadow-sm" : "text-muted-foreground hover:bg-card/40 hover:text-foreground",
+                ].join(" ")}
+              >
+                {label}
+                {active && <span className="absolute inset-x-3 -bottom-0.5 mx-auto h-px rounded-full bg-primary shadow-[0_0_10px_var(--primary)]" />}
+              </a>
+            );
+          })}
         </nav>
 
         <a href="/contact" onClick={(event) => navigate(event, "/contact")}
-          className="hidden items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-[12px] font-black text-primary-foreground shadow-lg shadow-primary/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-primary/30 lg:inline-flex">
+          className="relative z-10 hidden items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-[12px] font-black text-primary-foreground shadow-lg shadow-primary/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-primary/30 lg:inline-flex">
           Let’s connect <span>↗</span>
         </a>
 
-        <button type="button" className="inline-flex rounded-xl border border-border bg-card px-3.5 py-2.5 text-xs font-black md:hidden"
+        <button type="button" className="relative z-10 inline-flex rounded-xl border border-border/80 bg-card/75 px-3.5 py-2.5 text-xs font-black backdrop-blur md:hidden"
           aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}>
           {open ? "Close" : "Menu"}
         </button>
       </div>
 
       {open && (
-        <nav id="mobile-navigation" className="mx-auto mt-2 max-w-7xl rounded-2xl border border-border bg-background/95 p-2 shadow-xl backdrop-blur-xl md:hidden">
+        <nav id="mobile-navigation" className="pointer-events-auto relative mx-auto mt-2 max-w-7xl rounded-2xl border border-border/80 bg-background/92 p-2 shadow-2xl backdrop-blur-2xl md:hidden">
           <div className="flex flex-col gap-1">
             {links.map(([href, label]) => (
               <a key={href} href={href} onClick={(event) => navigate(event, href)}
