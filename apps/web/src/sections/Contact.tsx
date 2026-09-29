@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Section from "@/components/Section";
-import { getProfile } from "@/services/api";
+import { getProfile } from "@/data/portfolio";
 import type { Profile } from "@/types/portfolio";
 
 function Contact() {
