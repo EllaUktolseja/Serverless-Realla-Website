@@ -12,10 +12,15 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [pathname, setPathname] = useState(window.location.pathname);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handlePopState = () => setPathname(window.location.pathname);
-    const handleScroll = () => setScrolled(window.scrollY > 18);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 18);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0);
+    };
 
     window.addEventListener("popstate", handlePopState);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -51,6 +56,12 @@ function Navbar() {
         ].join(" ")}
       >
         <div className="prism-sheen pointer-events-none absolute inset-0 opacity-80" />
+        <div className="pointer-events-none absolute inset-x-5 bottom-0 z-20 h-px overflow-hidden bg-white/10">
+          <div
+            className="h-full origin-left bg-primary shadow-[0_0_12px_var(--primary)] transition-[width] duration-150"
+            style={{ width: scrollProgress + "%" }}
+          />
+        </div>
         <div className="pointer-events-none absolute inset-x-8 bottom-0 h-px bg-[linear-gradient(90deg,transparent,oklch(0.52_0.24_293_/_0.45),transparent)]" />
 
         <a href="/" onClick={(event) => navigate(event, "/")} className="group relative z-10 flex shrink-0 items-center gap-3 px-2.5">
