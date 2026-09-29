@@ -1,5 +1,5 @@
 {
-  "name": "realla-web",
+  "name": "realla-web-portfolio",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -10,7 +10,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "node scripts/dev.mjs",
+    "dev": "npm run dev --workspace=web",
     "build": "npm run build --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
