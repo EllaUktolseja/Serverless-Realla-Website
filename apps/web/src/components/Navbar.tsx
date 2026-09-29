@@ -41,10 +41,10 @@ function Navbar() {
   }
 
   return (
-    <header className="pointer-events-none sticky top-0 z-50 px-3 pt-3 sm:px-5">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div
         className={[
-          "relative mx-auto flex max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-[1.35rem] border px-2 transition-all duration-500 pointer-events-auto",
+          "relative mx-auto flex w-full max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-[1.35rem] border px-2 transition-all duration-500 pointer-events-auto backdrop-saturate-150",
           scrolled
             ? "min-h-14 border-white/60 bg-card/62 shadow-2xl shadow-foreground/[0.08] backdrop-blur-2xl"
             : "min-h-16 border-border/80 bg-background/78 shadow-lg shadow-foreground/[0.04] backdrop-blur-xl",

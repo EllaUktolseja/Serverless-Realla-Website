@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <Navbar />
-      <main key={pathname} className="page-reveal">
+      <main key={pathname} className="page-reveal pt-[5.5rem]">
         {renderPage()}
       </main>
     </div>

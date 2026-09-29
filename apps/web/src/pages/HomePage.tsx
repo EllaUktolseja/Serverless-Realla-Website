@@ -28,32 +28,32 @@ function HomePage() {
       <Hero />
       <About />
 
-      <section className="border-b border-border/70">
+      <section className="border-b border-foreground/10 bg-foreground text-background">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-7 lg:px-10 lg:py-24">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">Navigate / 02</p>
-              <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] sm:text-4xl">A little more about the work.</h2>
+              <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">A little more about the work.</h2>
             </div>
-            <p className="max-w-sm text-sm leading-6 text-muted-foreground">Four pages, one portfolio. Everything has a place.</p>
+            <p className="max-w-sm text-sm leading-6 text-white/55">Four pages, one portfolio. Everything has a place.</p>
           </div>
 
-          <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-border bg-border sm:grid-cols-2">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 shadow-2xl shadow-black/20 sm:grid-cols-2">
             {overviewLinks.map((item) => (
-              <a key={item.href} href={item.href} className="group bg-card p-7 transition-colors hover:bg-muted/50 sm:p-8">
+              <a key={item.href} href={item.href} className="group bg-white/[0.035] p-7 transition-all hover:bg-primary/[0.11] sm:p-8">
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-[11px] font-bold text-primary">{item.number}</span>
-                  <span className="text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                  <span className="text-white/40 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary">↗</span>
                 </div>
                 <h3 className="mt-12 text-xl font-black tracking-tight">{item.label}</h3>
-                <p className="mt-2 max-w-sm text-sm leading-6 text-muted-foreground">{item.description}</p>
+                <p className="mt-2 max-w-sm text-sm leading-6 text-white/55">{item.description}</p>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-border/70 bg-muted/30">
+      <section className="relative overflow-hidden border-b border-border/70 bg-[radial-gradient(circle_at_72%_18%,oklch(0.72_0.18_293_/_0.13),transparent_28rem),linear-gradient(180deg,oklch(0.955_0.012_286),oklch(0.92_0.018_286))]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-7 lg:px-10 lg:py-24">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -64,8 +64,8 @@ function HomePage() {
           </div>
 
           {currentProject ? (
-            <div className="mt-10 grid overflow-hidden rounded-[2rem] border border-border bg-card lg:grid-cols-[0.85fr_1.15fr]">
-              <div className="relative min-h-80 overflow-hidden bg-foreground p-7 sm:p-9">
+            <div className="mt-10 grid overflow-hidden rounded-[2rem] border border-border bg-card shadow-2xl shadow-primary/5 lg:grid-cols-[0.85fr_1.15fr]">
+              <div className="relative min-h-80 overflow-hidden bg-foreground p-7 sm:p-9 shadow-inner">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,oklch(0.55_0.22_293),transparent_35%),linear-gradient(145deg,oklch(0.2_0.03_286),oklch(0.11_0.02_286))]" />
                 <div className="relative flex h-full min-h-64 flex-col justify-between">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">Project {String(active + 1).padStart(2, "0")}</span>

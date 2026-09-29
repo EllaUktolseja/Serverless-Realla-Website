@@ -10,8 +10,10 @@ interface SectionProps {
 
 function Section({ id, eyebrow, title, children, className = "" }: SectionProps) {
   return (
-    <section id={id} className={`relative border-b border-border/70 ${className}`}>
-      <div className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
+    <section id={id} className={`relative overflow-hidden border-b border-border/70 ${className}`}>
+      <div className="pointer-events-none absolute -right-32 top-24 size-80 rounded-full bg-primary/[0.035] blur-3xl" />
+      <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-[linear-gradient(90deg,oklch(0.52_0.24_293_/_0.28),transparent)]" />
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
         <div className="flex flex-col gap-5 border-b border-border/70 pb-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-4xl">
             {eyebrow && (
