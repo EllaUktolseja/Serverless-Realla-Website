@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getProfile } from "@/services/api";
+import { getProfile } from "@/data/portfolio";
 import type { Profile } from "@/types/portfolio";
 
 function Hero() {
