@@ -50,7 +50,7 @@ function Navbar() {
             : "min-h-16 border-border/80 bg-background/78 shadow-lg shadow-foreground/[0.04] backdrop-blur-xl",
         ].join(" ")}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_20%,oklch(0.96_0.02_293_/_0.65)_42%,oklch(0.78_0.12_293_/_0.12)_52%,transparent_72%)] opacity-80" />
+        <div className="prism-sheen pointer-events-none absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute inset-x-8 bottom-0 h-px bg-[linear-gradient(90deg,transparent,oklch(0.52_0.24_293_/_0.45),transparent)]" />
 
         <a href="/" onClick={(event) => navigate(event, "/")} className="group relative z-10 flex shrink-0 items-center gap-3 px-2.5">

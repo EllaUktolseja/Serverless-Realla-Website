@@ -64,8 +64,16 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   0%, 100% { box-shadow: 0 0 0 0 oklch(0.52 0.24 293 / 0.16); }
   50% { box-shadow: 0 0 0 7px oklch(0.52 0.24 293 / 0); }
 }
+@keyframes prism-sheen {
+  0% { transform: translateX(-55%); }
+  100% { transform: translateX(55%); }
+}
 .animate-float { animation: float 5s ease-in-out infinite; }
 .animate-pulse-ring { animation: pulse-ring 2.4s ease-in-out infinite; }
+.prism-sheen {
+  background: linear-gradient(115deg, transparent 22%, oklch(0.96 0.02 293 / 0.34) 45%, oklch(0.78 0.12 293 / 0.12) 50%, transparent 70%);
+  animation: prism-sheen 8s ease-in-out infinite alternate;
+}
 .page-reveal { animation: reveal 420ms ease-out both; }
 
 @media (prefers-reduced-motion: reduce) {
