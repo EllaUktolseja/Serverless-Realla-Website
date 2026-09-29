@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import About from "@/sections/About";
 import Hero from "@/sections/Hero";
 import Footer from "@/sections/Footer";
-import { getProjects } from "@/services/api";
+import { getProjects } from "@/data/portfolio";
 import type { Project } from "@/types/portfolio";
 
 const overviewLinks = [
