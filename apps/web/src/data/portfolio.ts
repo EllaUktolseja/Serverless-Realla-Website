@@ -10,12 +10,11 @@ const profile: Profile = {
   name: "Gabriella Uktolseja",
   headline: "Undergraduate Software Engineer",
   bio: "Computer science student building full-stack web applications with TypeScript, React, Node.js, and modern backend tooling. I enjoy learning by turning ideas into products.",
-  email: "hello@example.com",
+  email: "agatha.uktolseja@gmail.com",
   location: "Bekasi, Indonesia",
-  linkedinUrl: "https://www.linkedin.com/",
+  linkedinUrl: "https://www.linkedin.com/in/ellauktolseja/",
   githubUrl: "https://github.com/EllaUktolseja",
-  whatsappUrl: "https://wa.me/6200000000000",
-  resumeUrl: "https://example.com/resume.pdf",
+  whatsappUrl: "https://wa.me/6285710304280",
 };
 
 const experiences: Experience[] = [

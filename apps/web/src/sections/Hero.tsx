@@ -10,7 +10,7 @@ function Hero() {
     void getProfile().then(setProfile).catch(() => undefined);
   }, []);
 
-  const name = profile?.name ?? "Your Name";
+  const name = profile?.name ?? "Gabriella Uktolseja";
   const headline = profile?.headline ?? "Undergraduate Software Engineer";
   const bio = profile?.bio ?? "I build thoughtful full-stack web applications while continuously strengthening my software engineering fundamentals.";
 
@@ -30,8 +30,8 @@ function Hero() {
           <p className="mt-7 text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground sm:mt-8 sm:text-sm">{headline}</p>
 
           <h1 className="mt-4 max-w-4xl text-[3.15rem] font-black leading-[0.92] tracking-[-0.06em] sm:text-6xl lg:text-[5.9rem]">
-            Building useful
-            <span className="block text-primary">software, deliberately.</span>
+            Bridging Ideas 
+            <span className="block text-primary">to Digital Experiences.</span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-8 sm:text-lg">

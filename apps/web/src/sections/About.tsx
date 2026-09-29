@@ -12,7 +12,7 @@ function About() {
   }, []);
 
   return (
-    <Section id="about" eyebrow="About me" title="Curious about how things work — and how to make them better.">
+    <Section id="about" eyebrow="About me" title="Curious about how things work and how to make them better.">
       <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr]">
         <div className="rounded-3xl border border-border bg-card p-7 sm:p-9">
           <p className="text-lg leading-8 text-foreground/85">
