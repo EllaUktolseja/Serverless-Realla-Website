@@ -42,7 +42,7 @@ function HomePage() {
     <>
       <Hero />
 
-      <section className="space-section bg-[#030309]">
+      <section className="space-section starlight-section bg-[#030309]">
         <div className="nebula pointer-events-none right-[4%] top-[-9rem] size-72" />
         <div className="space-container px-5 py-7 sm:px-7 lg:px-10">
           <Reveal>
@@ -75,7 +75,7 @@ function HomePage() {
 
       <About />
 
-      <section className="space-section bg-[#05030a]">
+      <section className="space-section starlight-section bg-[#05030a]">
         <div className="space-container px-5 py-8 sm:px-7 lg:px-10">
           <Reveal>
             <div className="grid gap-3 md:grid-cols-3">
