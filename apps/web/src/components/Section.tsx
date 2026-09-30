@@ -26,7 +26,7 @@ function Section({ id, eyebrow, title, children, className = "" }: SectionProps)
               {title}
             </h2>
           </div>
-          <span className="hud-label text-white/25">Realla / personal portfolio</span>
+          <span className="hud-label text-[#160f20]/55">Realla / personal portfolio</span>
         </div>
         <div className="pt-9">{children}</div>
       </div>
