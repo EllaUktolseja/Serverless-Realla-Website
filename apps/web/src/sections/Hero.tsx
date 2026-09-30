@@ -38,6 +38,8 @@ function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-3 text-white/30">
               <span className="hud-label">Mission 01</span>
               <span className="size-1 rounded-full bg-white/15" />
+              <span className="hud-label">{headline}</span>
+              <span className="size-1 rounded-full bg-white/15" />
               <span className="hud-label">Build / learn / iterate</span>
             </div>
           </Reveal>
