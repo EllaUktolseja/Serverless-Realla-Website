@@ -396,3 +396,75 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .starlight-section .hud-label { color: rgba(75, 41, 105, 0.52); }
 .starlight-section .hud-number { color: rgba(43, 25, 59, 0.30); }
 .starlight-section .signal-dot { box-shadow: 0 0 16px rgba(124, 58, 237, 0.36); }
+
+
+/* Calm mission-control layer: keep the space identity without visual overload. */
+.cosmic-stars {
+  opacity: 0.42;
+  animation: none;
+}
+
+.cosmic-grid {
+  opacity: 0.10;
+}
+
+.space-section {
+  background:
+    radial-gradient(circle at 82% 8%, oklch(0.52 0.28 300 / 0.055), transparent 28rem),
+    linear-gradient(180deg, rgba(8, 6, 13, 0.92), rgba(4, 3, 9, 0.97));
+}
+
+.cosmic-panel {
+  border-color: rgba(208, 190, 255, 0.10);
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(12px);
+}
+
+.cosmic-panel::before,
+.cosmic-panel::after {
+  opacity: 0.42;
+}
+
+.nebula {
+  opacity: 0.5;
+  filter: blur(24px);
+  animation: none;
+}
+
+.scanline::after,
+.hud-button::before {
+  display: none;
+}
+
+.signal-dot {
+  box-shadow: 0 0 10px oklch(0.67 0.25 300 / 0.5);
+  animation: none;
+}
+
+.prism-sheen {
+  opacity: 0.35;
+  animation: none;
+}
+
+.hero-orbit {
+  animation: none;
+  opacity: 0.45;
+}
+
+.hero-orbit-delay {
+  display: none;
+}
+
+.reveal-on-scroll {
+  transform: translateY(16px);
+  filter: blur(2px);
+  transition:
+    opacity 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-slide { animation-duration: 520ms; }
+.project-copy-slide { animation-duration: 480ms; }
