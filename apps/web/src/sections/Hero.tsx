@@ -74,11 +74,17 @@ function Hero() {
               <div className="absolute inset-[-2.6rem] rounded-full border border-primary/8" />
               <div className="cosmic-panel relative rounded-[2.3rem] p-2">
                 <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
-                  <img
-                    src={profile?.imageUrl ?? ""}
-                    alt={name}
-                    className="aspect-[4/5] w-full object-cover object-top transition duration-1000 hover:scale-[1.025]"
-                  />
+                  {profile?.imageUrl ? (
+                    <img
+                      src={profile.imageUrl}
+                      alt={name}
+                      className="aspect-[4/5] w-full object-cover object-top transition duration-1000 hover:scale-[1.025]"
+                    />
+                  ) : (
+                    <div className="flex aspect-[4/5] items-end bg-[radial-gradient(circle_at_70%_20%,rgba(124,58,237,0.32),transparent_32%),linear-gradient(145deg,#171021,#05030a)] p-6">
+                      <span className="hud-label text-white/40">Profile unavailable</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(89,46,140,0.03),transparent_38%,rgba(0,0,0,0.8))]" />
                   <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
                     <span className="hud-label rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-white/50 backdrop-blur">
