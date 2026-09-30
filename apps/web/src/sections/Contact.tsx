@@ -16,7 +16,7 @@ function Contact() {
   const profileHeadline = profile?.headline ?? "Undergraduate Software Engineer";
 
   return (
-    <Section id="contact" eyebrow="Communication deck" title="Open a channel.">
+    <Section id="contact" className="starlight-section" eyebrow="Communication deck" title="Open a channel.">
       <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal className="cosmic-panel overflow-hidden rounded-[2rem]">
           <div className="relative">
@@ -24,21 +24,21 @@ function Contact() {
               {profile?.imageUrl ? (
                 <img src={profile.imageUrl} alt={profileName} className="size-full object-cover object-top transition duration-1000 hover:scale-[1.02]" />
               ) : (
-                <div className="grid size-full place-items-center text-sm text-white/30">Profile photo</div>
+                <div className="grid size-full place-items-center text-sm text-[#160f20]/30">Profile photo</div>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-primary/6" />
               <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
-                <span className="hud-label rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-white/45 backdrop-blur">Profile / 01</span>
+                <span className="hud-label rounded-full border border-[#2f1b46]/10 bg-black/35 px-3 py-1.5 text-[#160f20]/45 backdrop-blur">Profile / 01</span>
                 <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">Online</span>
               </div>
             </div>
 
             <div className="relative p-6 sm:p-7">
               <p className="hud-label text-primary">Pilot profile</p>
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-white">{profileName}</h3>
-              <p className="mt-1 text-sm font-semibold text-white/45">{profileHeadline}</p>
-              <p className="mt-5 text-sm leading-7 text-white/41">A computer science student who enjoys turning ideas into thoughtful digital experiences, learning through hands-on projects, and building things that are useful in the real world.</p>
-              {profile?.location && <p className="mt-5 hud-label text-white/24">Coordinates / {profile.location}</p>}
+              <h3 className="mt-3 text-2xl font-black tracking-tight text-[#160f20]">{profileName}</h3>
+              <p className="mt-1 text-sm font-semibold text-[#160f20]/45">{profileHeadline}</p>
+              <p className="mt-5 text-sm leading-7 text-[#160f20]/41">A computer science student who enjoys turning ideas into thoughtful digital experiences, learning through hands-on projects, and building things that are useful in the real world.</p>
+              {profile?.location && <p className="mt-5 hud-label text-[#160f20]/24">Coordinates / {profile.location}</p>}
             </div>
           </div>
         </Reveal>
@@ -50,8 +50,8 @@ function Contact() {
                 <span className="signal-dot" />
                 <span className="hud-label text-primary">Transmission ready</span>
               </div>
-              <h3 className="mt-4 max-w-xl text-3xl font-black tracking-[-0.055em] text-white sm:text-4xl">Let’s talk about opportunities, ideas, and things worth building.</h3>
-              <p className="mt-5 max-w-xl leading-7 text-white/43">Whether it’s an internship opportunity, collaboration, project discussion, or a professional introduction, these channels go directly to me.</p>
+              <h3 className="mt-4 max-w-xl text-3xl font-black tracking-[-0.055em] text-[#160f20] sm:text-4xl">Let’s talk about opportunities, ideas, and things worth building.</h3>
+              <p className="mt-5 max-w-xl leading-7 text-[#160f20]/43">Whether it’s an internship opportunity, collaboration, project discussion, or a professional introduction, these channels go directly to me.</p>
             </div>
           </Reveal>
 
@@ -60,8 +60,8 @@ function Contact() {
               <Reveal className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
                 <a href={"mailto:" + profile.email} className="block">
                   <p className="hud-label text-primary">Email / 01</p>
-                  <p className="mt-3 break-all text-sm font-bold text-white">{profile.email}</p>
-                  <p className="mt-2 text-xs leading-5 text-white/28">Send a direct message ↗</p>
+                  <p className="mt-3 break-all text-sm font-bold text-[#160f20]">{profile.email}</p>
+                  <p className="mt-2 text-xs leading-5 text-[#160f20]/28">Send a direct message ↗</p>
                 </a>
               </Reveal>
             )}
@@ -70,8 +70,8 @@ function Contact() {
               <Reveal delay={60} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
                 <a href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="block">
                   <p className="hud-label text-primary">LinkedIn / 02</p>
-                  <p className="mt-3 text-sm font-bold text-white">Connect professionally ↗</p>
-                  <p className="mt-2 text-xs leading-5 text-white/28">Experience, education, and network</p>
+                  <p className="mt-3 text-sm font-bold text-[#160f20]">Connect professionally ↗</p>
+                  <p className="mt-2 text-xs leading-5 text-[#160f20]/28">Experience, education, and network</p>
                 </a>
               </Reveal>
             )}
@@ -80,8 +80,8 @@ function Contact() {
               <Reveal delay={120} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
                 <a href={profile.githubUrl} target="_blank" rel="noreferrer" className="block">
                   <p className="hud-label text-primary">GitHub / 03</p>
-                  <p className="mt-3 text-sm font-bold text-white">Explore my work ↗</p>
-                  <p className="mt-2 text-xs leading-5 text-white/28">Projects, code, and experiments</p>
+                  <p className="mt-3 text-sm font-bold text-[#160f20]">Explore my work ↗</p>
+                  <p className="mt-2 text-xs leading-5 text-[#160f20]/28">Projects, code, and experiments</p>
                 </a>
               </Reveal>
             )}
@@ -90,8 +90,8 @@ function Contact() {
               <Reveal delay={180} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
                 <a href={profile.whatsappUrl} target="_blank" rel="noreferrer" className="block">
                   <p className="hud-label text-primary">WhatsApp / 04</p>
-                  <p className="mt-3 text-sm font-bold text-white">Start a quick chat ↗</p>
-                  <p className="mt-2 text-xs leading-5 text-white/28">A direct conversation channel</p>
+                  <p className="mt-3 text-sm font-bold text-[#160f20]">Start a quick chat ↗</p>
+                  <p className="mt-2 text-xs leading-5 text-[#160f20]/28">A direct conversation channel</p>
                 </a>
               </Reveal>
             )}

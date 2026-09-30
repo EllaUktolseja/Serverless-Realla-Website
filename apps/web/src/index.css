@@ -316,3 +316,83 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.starlight-section {
+  background:
+    radial-gradient(circle at 84% 7%, rgba(139, 92, 246, 0.10), transparent 24rem),
+    radial-gradient(circle at 8% 78%, rgba(196, 181, 253, 0.14), transparent 26rem),
+    linear-gradient(180deg, #fbfaff 0%, #f3effb 100%);
+  color: #100b18;
+  border-bottom-color: rgba(76, 29, 149, 0.10);
+}
+
+.starlight-section::before {
+  background:
+    linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.035) 48%, transparent),
+    linear-gradient(90deg, transparent 0, rgba(124, 58, 237, 0.025) 50%, transparent 100%);
+}
+
+.starlight-section .space-container > .border-b,
+.starlight-section .border-white\/8 {
+  border-color: rgba(39, 20, 68, 0.10);
+}
+
+.starlight-section .cosmic-panel {
+  border-color: rgba(70, 40, 105, 0.13);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.88), rgba(247,243,253,0.94)),
+    #fff;
+  box-shadow:
+    0 24px 70px rgba(55, 30, 84, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.90);
+  color: #140e1d;
+}
+
+.starlight-section .cosmic-panel::before {
+  border-top-color: rgba(124, 58, 237, 0.35);
+  border-left-color: rgba(124, 58, 237, 0.35);
+}
+
+.starlight-section .cosmic-panel::after {
+  border-right-color: rgba(124, 58, 237, 0.24);
+  border-bottom-color: rgba(124, 58, 237, 0.24);
+}
+
+.starlight-section .text-white { color: #160f20; }
+.starlight-section .text-white\/88 { color: rgba(22, 15, 32, 0.88); }
+.starlight-section .text-white\/78 { color: rgba(22, 15, 32, 0.78); }
+.starlight-section .text-white\/76 { color: rgba(22, 15, 32, 0.76); }
+.starlight-section .text-white\/72 { color: rgba(22, 15, 32, 0.72); }
+.starlight-section .text-white\/58 { color: rgba(38, 27, 53, 0.58); }
+.starlight-section .text-white\/55 { color: rgba(38, 27, 53, 0.55); }
+.starlight-section .text-white\/47 { color: rgba(47, 34, 62, 0.47); }
+.starlight-section .text-white\/45 { color: rgba(47, 34, 62, 0.45); }
+.starlight-section .text-white\/43 { color: rgba(47, 34, 62, 0.43); }
+.starlight-section .text-white\/42 { color: rgba(47, 34, 62, 0.42); }
+.starlight-section .text-white\/41 { color: rgba(47, 34, 62, 0.41); }
+.starlight-section .text-white\/40 { color: rgba(47, 34, 62, 0.40); }
+.starlight-section .text-white\/38 { color: rgba(47, 34, 62, 0.38); }
+.starlight-section .text-white\/36 { color: rgba(47, 34, 62, 0.36); }
+.starlight-section .text-white\/35 { color: rgba(47, 34, 62, 0.35); }
+.starlight-section .text-white\/34 { color: rgba(47, 34, 62, 0.34); }
+.starlight-section .text-white\/30 { color: rgba(47, 34, 62, 0.30); }
+.starlight-section .text-white\/28 { color: rgba(47, 34, 62, 0.28); }
+.starlight-section .text-white\/25 { color: rgba(47, 34, 62, 0.25); }
+.starlight-section .text-white\/24 { color: rgba(47, 34, 62, 0.24); }
+.starlight-section .text-white\/23 { color: rgba(47, 34, 62, 0.23); }
+.starlight-section .text-white\/22 { color: rgba(47, 34, 62, 0.22); }
+.starlight-section .text-white\/18 { color: rgba(47, 34, 62, 0.18); }
+.starlight-section .text-white\/8 { color: rgba(47, 34, 62, 0.08); }
+.starlight-section .bg-white\/\[0\.04\] { background: rgba(48, 25, 73, 0.035); }
+.starlight-section .bg-white\/\[0\.035\] { background: rgba(48, 25, 73, 0.028); }
+.starlight-section .bg-white\/\[0\.025\] { background: rgba(48, 25, 73, 0.025); }
+.starlight-section .bg-white\/\[0\.018\] { background: rgba(48, 25, 73, 0.018); }
+.starlight-section .border-white\/10 { border-color: rgba(48, 25, 73, 0.10); }
+.starlight-section .border-white\/9 { border-color: rgba(48, 25, 73, 0.09); }
+.starlight-section .border-white\/8 { border-color: rgba(48, 25, 73, 0.08); }
+.starlight-section .divide-white\/8 > :not([hidden]) ~ :not([hidden]) { border-color: rgba(48, 25, 73, 0.08); }
+
+.starlight-section .hud-label { color: rgba(75, 41, 105, 0.52); }
+.starlight-section .hud-number { color: rgba(43, 25, 59, 0.30); }
+.starlight-section .signal-dot { box-shadow: 0 0 16px rgba(124, 58, 237, 0.36); }
