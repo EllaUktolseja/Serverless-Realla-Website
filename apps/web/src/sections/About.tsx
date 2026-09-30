@@ -81,7 +81,7 @@ function About() {
                   <div>
                     <div className="flex items-center justify-between gap-3">
                       <h4 className="text-sm font-black text-white">{title}</h4>
-                      <span className="text-xs text-[#2f223e]/45 transition duration-300 group-hover:translate-x-1 group-hover:text-primary">↗</span>
+                      <span className="text-xs text-[#2f223e]/55 transition duration-300 group-hover:translate-x-1 group-hover:text-primary">↗</span>
                     </div>
                     <p className="mt-2 max-w-sm text-sm leading-6 text-[#2f223e]/72">{description}</p>
                   </div>
@@ -89,7 +89,7 @@ function About() {
               ))}
             </div>
 
-            <a href="/experience" className="mt-1 inline-flex rounded-full border border-[#2f1b46]/10 px-4 py-2.5 text-xs font-bold text-[#261b35]/76 transition hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/8 hover:text-white">
+            <a href="/experience" className="mt-1 inline-flex rounded-full border border-[#2f1b46]/10 px-4 py-2.5 text-xs font-bold text-[#261b35]/76 transition hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/8 hover:text-[#160f20]">
               Trace the journey ↗
             </a>
           </div>
