@@ -74,7 +74,7 @@ function Navbar() {
           </span>
           <span>
             <span className="block text-[14px] font-black tracking-[-0.02em] text-white">Realla<span className="text-primary">.</span></span>
-            <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-white/30 sm:block">Personal portfolio system</span>
+            <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-white/30 sm:block">Software engineering / on duty</span>
           </span>
         </a>
 
@@ -103,7 +103,7 @@ function Navbar() {
 
           <div className="hidden items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/35 xl:flex">
             <span className="signal-dot" />
-            System online
+            On duty
           </div>
         </div>
 
@@ -112,7 +112,7 @@ function Navbar() {
           onClick={(event) => navigate(event, "/contact")}
           className="hud-button relative z-10 hidden items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-[11px] font-black text-primary-foreground shadow-[0_12px_30px_oklch(0.69_0.28_300_/_0.18)] transition hover:-translate-y-0.5 lg:inline-flex"
         >
-          Open channel <span aria-hidden>↗</span>
+          Contact me <span aria-hidden>↗</span>
         </a>
 
         <button
@@ -147,7 +147,7 @@ function Navbar() {
               onClick={(event) => navigate(event, "/contact")}
               className="mt-1 rounded-xl bg-primary px-4 py-3 text-center text-sm font-black text-primary-foreground"
             >
-              Open communication ↗
+              Contact me ↗
             </a>
           </div>
         </nav>
