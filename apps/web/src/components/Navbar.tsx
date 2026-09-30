@@ -51,12 +51,12 @@ function Navbar() {
         className={[
           "relative mx-auto flex w-full max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-2xl border px-2 transition-all duration-500 pointer-events-auto",
           scrolled
-            ? "min-h-14 border-primary/20 bg-[#05040a]/78 shadow-2xl shadow-black/45 backdrop-blur-2xl"
-            : "min-h-16 border-white/10 bg-[#07050c]/70 shadow-xl shadow-black/30 backdrop-blur-xl",
+            ? "min-h-14 border-[#2f1b46]/10 bg-white/88 shadow-xl shadow-[#35214d]/10 backdrop-blur-xl"
+            : "min-h-16 border-[#2f1b46]/10 bg-white/78 shadow-lg shadow-[#35214d]/8 backdrop-blur-xl",
         ].join(" ")}
       >
         <div className="prism-sheen pointer-events-none absolute inset-0 opacity-70" />
-        <div className="pointer-events-none absolute inset-x-5 bottom-0 z-20 h-px overflow-hidden bg-white/10">
+        <div className="pointer-events-none absolute inset-x-5 bottom-0 z-20 h-px overflow-hidden bg-[#2f1b46]/10">
           <div
             className="h-full origin-left bg-primary shadow-[0_0_16px_oklch(0.69_0.28_300_/_0.8)] transition-[width] duration-150"
             style={{ width: scrollProgress + "%" }}
@@ -73,13 +73,13 @@ function Navbar() {
             R
           </span>
           <span>
-            <span className="block text-[14px] font-black tracking-[-0.02em] text-white">Realla<span className="text-primary">.</span></span>
+            <span className="block text-[14px] font-black tracking-[-0.02em] text-[#160f20]">Realla<span className="text-primary">.</span></span>
             <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-white/30 sm:block">Software engineering / on duty</span>
           </span>
         </a>
 
         <div className="relative z-10 hidden items-center gap-4 md:flex">
-          <nav className="flex items-center gap-1 rounded-xl border border-white/8 bg-white/[0.025] p-1">
+          <nav className="flex items-center gap-1 rounded-xl border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] p-1">
             {links.map(([href, label]) => {
               const active = isActive(href);
               return (
@@ -90,8 +90,8 @@ function Navbar() {
                   className={[
                     "relative rounded-lg px-3.5 py-2 text-[11px] font-bold transition-all lg:px-4",
                     active
-                      ? "bg-white/[0.08] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]"
-                      : "text-white/42 hover:bg-white/[0.04] hover:text-white/80",
+                      ? "bg-primary/8 text-[#160f20] shadow-[inset_0_0_0_1px_rgba(124,58,237,0.06)]"
+                      : "text-[#160f20]/50 hover:bg-[#3f245c]/[0.035] hover:text-[#160f20]",
                   ].join(" ")}
                 >
                   {label}
@@ -101,7 +101,7 @@ function Navbar() {
             })}
           </nav>
 
-          <div className="hidden items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/35 xl:flex">
+          <div className="hidden items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-[#160f20]/48 xl:flex">
             <span className="signal-dot" />
             On duty
           </div>
@@ -117,7 +117,7 @@ function Navbar() {
 
         <button
           type="button"
-          className="relative z-10 inline-flex rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-[11px] font-black text-white md:hidden"
+          className="relative z-10 inline-flex rounded-xl border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] px-3.5 py-2.5 text-[11px] font-black text-[#160f20] md:hidden"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           onClick={() => setOpen((value) => !value)}
@@ -127,7 +127,7 @@ function Navbar() {
       </div>
 
       {open && (
-        <nav id="mobile-navigation" className="pointer-events-auto relative mx-auto mt-2 max-w-7xl rounded-2xl border border-primary/15 bg-[#05040a]/92 p-2 shadow-2xl shadow-black/50 backdrop-blur-2xl md:hidden">
+        <nav id="mobile-navigation" className="pointer-events-auto relative mx-auto mt-2 max-w-7xl rounded-2xl border border-primary/15 bg-white/96 p-2 shadow-xl shadow-[#35214d]/12 backdrop-blur-2xl md:hidden">
           <div className="flex flex-col gap-1">
             {links.map(([href, label]) => (
               <a
@@ -136,7 +136,7 @@ function Navbar() {
                 onClick={(event) => navigate(event, href)}
                 className={[
                   "rounded-xl px-4 py-3 text-sm font-bold transition",
-                  isActive(href) ? "bg-primary/12 text-primary" : "text-white/55 hover:bg-white/[0.04] hover:text-white",
+                  isActive(href) ? "bg-primary/8 text-primary" : "text-[#160f20]/55 hover:bg-[#3f245c]/[0.035] hover:text-[#160f20]",
                 ].join(" ")}
               >
                 {label}

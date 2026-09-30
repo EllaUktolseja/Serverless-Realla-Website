@@ -16,7 +16,7 @@ function Skills() {
   const categories = [...new Set(skills.map((skill) => skill.category))];
 
   return (
-    <Section id="skills" eyebrow="Technology systems" title="The toolkit I use to turn ideas into software.">
+    <Section id="skills" className="mission-section" eyebrow="Technology systems" title="The toolkit I use to turn ideas into software.">
       {error ? (
         <p className="text-sm text-destructive">{error}</p>
       ) : skills.length === 0 ? (

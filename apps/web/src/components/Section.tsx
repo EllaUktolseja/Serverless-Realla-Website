@@ -10,7 +10,7 @@ interface SectionProps {
 
 function Section({ id, eyebrow, title, children, className = "" }: SectionProps) {
   return (
-    <section id={id} className={"space-section " + className}>
+    <section id={id} className={"space-section starlight-section " + className}>
       <div className="pointer-events-none absolute -right-40 top-10 size-[28rem] rounded-full bg-primary/[0.05] blur-3xl" />
       <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-[linear-gradient(90deg,oklch(0.69_0.28_300_/_0.45),transparent)]" />
       <div className="space-container px-5 py-16 sm:px-7 sm:py-20 lg:px-10 lg:py-24">
@@ -26,7 +26,7 @@ function Section({ id, eyebrow, title, children, className = "" }: SectionProps)
               {title}
             </h2>
           </div>
-          <span className="hud-label text-white/25">REALLA / personal systems</span>
+          <span className="hud-label text-white/25">Realla / personal portfolio</span>
         </div>
         <div className="pt-9">{children}</div>
       </div>

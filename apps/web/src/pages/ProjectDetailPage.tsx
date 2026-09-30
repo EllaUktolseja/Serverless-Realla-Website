@@ -100,7 +100,7 @@ function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
 
   return (
     <>
-      <article className="space-section">
+      <article className="space-section mission-section">
         <div className="nebula pointer-events-none right-[-10rem] top-12 size-[34rem]" />
         <div className="space-container px-5 py-10 sm:px-7 lg:px-10 lg:py-14">
           <a href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-white/35 transition hover:text-primary">

@@ -468,3 +468,98 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
 .project-slide { animation-duration: 520ms; }
 .project-copy-slide { animation-duration: 480ms; }
+
+
+/* Light mode: starlight is the default surface; mission areas stay intentionally dark. */
+:root {
+  --background: oklch(0.985 0.008 286);
+  --foreground: oklch(0.16 0.025 286);
+  --card: oklch(0.995 0.005 286);
+  --card-foreground: oklch(0.16 0.025 286);
+  --muted: oklch(0.94 0.018 286);
+  --muted-foreground: oklch(0.43 0.035 286);
+  --border: oklch(0.88 0.025 286);
+  --input: oklch(0.90 0.02 286);
+}
+
+html { background: #f8f6fc; }
+
+body {
+  color: #160f20;
+  background:
+    radial-gradient(circle at 86% 2%, rgba(139, 92, 246, 0.10), transparent 26rem),
+    radial-gradient(circle at 8% 42%, rgba(196, 181, 253, 0.11), transparent 30rem),
+    linear-gradient(180deg, #fbfaff 0%, #f5f1fa 55%, #faf8fd 100%);
+}
+
+.cosmic-stars {
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(76, 29, 149, 0.28) 0 0.65px, transparent 0.9px),
+    radial-gradient(circle at 76% 31%, rgba(124, 58, 237, 0.22) 0 0.7px, transparent 1px),
+    radial-gradient(circle at 35% 72%, rgba(76, 29, 149, 0.18) 0 0.65px, transparent 0.9px);
+  background-size: 260px 260px, 340px 340px, 310px 310px;
+}
+
+.cosmic-grid {
+  opacity: 0.055;
+  background-image:
+    linear-gradient(rgba(76, 29, 149, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 29, 149, 0.06) 1px, transparent 1px);
+}
+
+.space-section.starlight-section { min-height: 0; }
+
+.mission-section {
+  color: #f7f2ff;
+}
+
+.mission-section.starlight-section {
+  background:
+    radial-gradient(circle at 82% 8%, oklch(0.52 0.28 300 / 0.055), transparent 28rem),
+    linear-gradient(180deg, rgba(8, 6, 13, 0.92), rgba(4, 3, 9, 0.97));
+  color: #f7f2ff;
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.mission-section .cosmic-panel {
+  border-color: rgba(208,190,255,0.10);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+    rgba(7,5,12,0.78);
+  color: #f7f2ff;
+  box-shadow:
+    0 18px 48px rgba(0,0,0,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+.mission-section .text-white { color: #fff; }
+.mission-section .text-white\/88 { color: rgba(255,255,255,0.88); }
+.mission-section .text-white\/78 { color: rgba(255,255,255,0.78); }
+.mission-section .text-white\/76 { color: rgba(255,255,255,0.76); }
+.mission-section .text-white\/72 { color: rgba(255,255,255,0.72); }
+.mission-section .text-white\/58 { color: rgba(255,255,255,0.58); }
+.mission-section .text-white\/55 { color: rgba(255,255,255,0.55); }
+.mission-section .text-white\/47 { color: rgba(255,255,255,0.47); }
+.mission-section .text-white\/45 { color: rgba(255,255,255,0.45); }
+.mission-section .text-white\/43 { color: rgba(255,255,255,0.43); }
+.mission-section .text-white\/42 { color: rgba(255,255,255,0.42); }
+.mission-section .text-white\/40 { color: rgba(255,255,255,0.40); }
+.mission-section .text-white\/38 { color: rgba(255,255,255,0.38); }
+.mission-section .text-white\/36 { color: rgba(255,255,255,0.36); }
+.mission-section .text-white\/35 { color: rgba(255,255,255,0.35); }
+.mission-section .text-white\/34 { color: rgba(255,255,255,0.34); }
+.mission-section .text-white\/30 { color: rgba(255,255,255,0.30); }
+.mission-section .text-white\/28 { color: rgba(255,255,255,0.28); }
+.mission-section .text-white\/25 { color: rgba(255,255,255,0.25); }
+.mission-section .text-white\/24 { color: rgba(255,255,255,0.24); }
+.mission-section .text-white\/23 { color: rgba(255,255,255,0.23); }
+.mission-section .text-white\/22 { color: rgba(255,255,255,0.22); }
+.mission-section .text-white\/18 { color: rgba(255,255,255,0.18); }
+.mission-section .border-white\/10 { border-color: rgba(255,255,255,0.10); }
+.mission-section .border-white\/9 { border-color: rgba(255,255,255,0.09); }
+.mission-section .border-white\/8 { border-color: rgba(255,255,255,0.08); }
+.mission-section .divide-white\/8 > :not([hidden]) ~ :not([hidden]) { border-color: rgba(255,255,255,0.08); }
+
+.starlight-section.mission-section .hud-label { color: rgba(247,242,255,0.58); }
+.starlight-section.mission-section .hud-number { color: rgba(247,242,255,0.30); }

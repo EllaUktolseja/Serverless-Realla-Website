@@ -40,7 +40,7 @@ function ProjectsPage() {
 
   return (
     <>
-      <section className="space-section min-h-screen">
+      <section className="space-section mission-section min-h-screen">
         <div className="nebula pointer-events-none right-[-12rem] top-20 size-[32rem]" />
         <div className="space-container px-5 py-14 sm:px-7 lg:px-10 lg:py-20">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
