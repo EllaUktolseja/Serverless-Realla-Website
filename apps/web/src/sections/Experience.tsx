@@ -78,14 +78,14 @@ function Experience() {
 
               <div className="mt-7 space-y-8">
                 {education.length === 0 ? (
-                  <p className="text-sm text-[#160f20]/35">No education data available yet.</p>
+                  <p className="text-sm text-[#160f20]/58">No education data available yet.</p>
                 ) : (
                   education.map((item, index) => (
                     <article key={item.institution + item.degree}>
                       <p className="hud-number text-[10px] font-bold text-primary">0{index + 1}</p>
                       <h4 className="mt-2 text-lg font-black text-[#160f20]">{item.degree}</h4>
-                      <p className="mt-1 text-sm font-semibold text-[#160f20]/45">{item.institution}</p>
-                      {item.field && <p className="mt-1 text-sm text-[#160f20]/35">{item.field}</p>}
+                      <p className="mt-1 text-sm font-semibold text-[#160f20]/65">{item.institution}</p>
+                      {item.field && <p className="mt-1 text-sm text-[#160f20]/58">{item.field}</p>}
                       <div className="mt-4 rounded-xl border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] p-4">
                         <p className="hud-label text-primary">Study period</p>
                         <p className="mt-1 text-sm font-bold text-[#160f20]">
