@@ -30,18 +30,12 @@ function Hero() {
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/18 bg-primary/[0.07] px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary backdrop-blur-xl">
               <span className="signal-dot" />
-              Signal active / open to internships
+              On duty / open to internships
             </div>
           </Reveal>
 
           <Reveal delay={70}>
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-white/30">
-              <span className="hud-label">Mission 01</span>
-              <span className="size-1 rounded-full bg-white/15" />
-              <span className="hud-label">{headline}</span>
-              <span className="size-1 rounded-full bg-white/15" />
-              <span className="hud-label">Build / learn / iterate</span>
-            </div>
+            <p className="mt-8 hud-label text-white/34">{headline} / On duty</p>
           </Reveal>
 
           <Reveal delay={130}>
@@ -70,25 +64,6 @@ function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={330}>
-            <div className="cosmic-panel scanline mt-10 rounded-[1.6rem] p-4 sm:mt-12 sm:p-5">
-              <div className="grid gap-4 sm:grid-cols-3">
-                {[
-                  ["01", "Full-stack", "Web development"],
-                  ["02", "TypeScript", "Primary language"],
-                  ["03", "Hands-on", "Build & learn"],
-                ].map(([number, title, description]) => (
-                  <div key={number} className="relative flex gap-3 border-white/8 sm:block sm:border-r sm:last:border-r-0 sm:pr-5 sm:last:pr-0">
-                    <span className="hud-number text-[10px] font-bold text-primary">{number}</span>
-                    <div>
-                      <p className="text-sm font-black text-white">{title}</p>
-                      <p className="mt-1 text-[10px] leading-5 text-white/35">{description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
         </div>
 
         <Reveal delay={180} className="mx-auto w-full max-w-[22rem] lg:max-w-[25rem]">
@@ -107,7 +82,7 @@ function Hero() {
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(89,46,140,0.03),transparent_38%,rgba(0,0,0,0.8))]" />
                   <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
                     <span className="hud-label rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-white/50 backdrop-blur">
-                      Portrait / 01
+                      Profile
                     </span>
                     <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">
                       Active
@@ -116,22 +91,18 @@ function Hero() {
                   <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-xl">
                     <div className="flex items-end justify-between gap-4">
                       <div>
-                        <p className="hud-label text-white/35">Current chapter</p>
-                        <p className="mt-1 text-lg font-black text-white">Learning by building.</p>
+                        <p className="hud-label text-white/35">Current focus</p>
+                        <p className="mt-1 text-lg font-black text-white">Building, learning, iterating.</p>
                       </div>
                       <div className="text-right">
                         <p className="hud-label text-white/25">Status</p>
-                        <p className="mt-1 text-xs font-black text-primary">ONLINE</p>
+                        <p className="mt-1 text-xs font-black text-primary">ON DUTY</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="animate-float absolute -bottom-5 -left-5 rounded-2xl border border-primary/15 bg-[#08050f]/88 px-4 py-3 shadow-2xl shadow-black/40 backdrop-blur-xl">
-                <p className="hud-label text-primary">Coordinates</p>
-                <p className="mt-1 text-sm font-bold text-white">{profile?.location ?? "Bekasi, Indonesia"}</p>
-              </div>
             </div>
           </div>
         </Reveal>
