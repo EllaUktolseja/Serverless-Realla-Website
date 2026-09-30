@@ -35,6 +35,8 @@ function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <div className="cosmic-stars" aria-hidden="true" />
+      <div className="cosmic-grid" aria-hidden="true" />
       <Navbar />
       <main key={pathname} className="page-reveal pt-[5.5rem]">
         {renderPage()}

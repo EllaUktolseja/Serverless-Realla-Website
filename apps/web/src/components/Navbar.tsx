@@ -49,67 +49,105 @@ function Navbar() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div
         className={[
-          "relative mx-auto flex w-full max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-[1.35rem] border px-2 transition-all duration-500 pointer-events-auto backdrop-saturate-150",
+          "relative mx-auto flex w-full max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-2xl border px-2 transition-all duration-500 pointer-events-auto",
           scrolled
-            ? "min-h-14 border-white/60 bg-card/62 shadow-2xl shadow-foreground/[0.08] backdrop-blur-2xl"
-            : "min-h-16 border-border/80 bg-background/78 shadow-lg shadow-foreground/[0.04] backdrop-blur-xl",
+            ? "min-h-14 border-primary/20 bg-[#05040a]/78 shadow-2xl shadow-black/45 backdrop-blur-2xl"
+            : "min-h-16 border-white/10 bg-[#07050c]/70 shadow-xl shadow-black/30 backdrop-blur-xl",
         ].join(" ")}
       >
-        <div className="prism-sheen pointer-events-none absolute inset-0 opacity-80" />
+        <div className="prism-sheen pointer-events-none absolute inset-0 opacity-70" />
         <div className="pointer-events-none absolute inset-x-5 bottom-0 z-20 h-px overflow-hidden bg-white/10">
           <div
-            className="h-full origin-left bg-primary shadow-[0_0_12px_var(--primary)] transition-[width] duration-150"
+            className="h-full origin-left bg-primary shadow-[0_0_16px_oklch(0.69_0.28_300_/_0.8)] transition-[width] duration-150"
             style={{ width: scrollProgress + "%" }}
           />
         </div>
-        <div className="pointer-events-none absolute inset-x-8 bottom-0 h-px bg-[linear-gradient(90deg,transparent,oklch(0.52_0.24_293_/_0.45),transparent)]" />
 
-        <a href="/" onClick={(event) => navigate(event, "/")} className="group relative z-10 flex shrink-0 items-center gap-3 px-2.5">
-          <span className="grid size-9 place-items-center rounded-xl bg-foreground text-sm font-black text-background shadow-sm transition duration-300 group-hover:rotate-[-6deg] group-hover:scale-105">R</span>
-          <span className="text-[15px] font-black tracking-[-0.02em]">Realla<span className="text-primary">.</span></span>
+        <a
+          href="/"
+          onClick={(event) => navigate(event, "/")}
+          className="group relative z-10 flex shrink-0 items-center gap-3 px-2.5"
+        >
+          <span className="relative grid size-9 place-items-center rounded-xl border border-primary/30 bg-primary/10 font-mono text-sm font-black text-primary shadow-[0_0_24px_oklch(0.69_0.28_300_/_0.16)] transition duration-300 group-hover:scale-105">
+            <span className="absolute inset-1.5 rounded-full border border-primary/35" />
+            R
+          </span>
+          <span>
+            <span className="block text-[14px] font-black tracking-[-0.02em] text-white">Realla<span className="text-primary">.</span></span>
+            <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-white/30 sm:block">Personal portfolio system</span>
+          </span>
         </a>
 
-        <nav className="relative z-10 hidden items-center gap-1 rounded-xl border border-white/45 bg-white/35 p-1 shadow-inner backdrop-blur md:flex dark:bg-white/5">
-          {links.map(([href, label]) => {
-            const active = isActive(href);
+        <div className="relative z-10 hidden items-center gap-4 md:flex">
+          <nav className="flex items-center gap-1 rounded-xl border border-white/8 bg-white/[0.025] p-1">
+            {links.map(([href, label]) => {
+              const active = isActive(href);
+              return (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={(event) => navigate(event, href)}
+                  className={[
+                    "relative rounded-lg px-3.5 py-2 text-[11px] font-bold transition-all lg:px-4",
+                    active
+                      ? "bg-white/[0.08] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]"
+                      : "text-white/42 hover:bg-white/[0.04] hover:text-white/80",
+                  ].join(" ")}
+                >
+                  {label}
+                  {active && <span className="absolute inset-x-4 -bottom-0.5 mx-auto h-px rounded-full bg-primary shadow-[0_0_10px_var(--primary)]" />}
+                </a>
+              );
+            })}
+          </nav>
 
-            return (
-              <a key={href} href={href} onClick={(event) => navigate(event, href)}
-                className={[
-                  "relative rounded-lg px-3.5 py-2 text-[12px] font-bold transition-all lg:px-4",
-                  active ? "bg-card/90 text-foreground shadow-sm" : "text-muted-foreground hover:bg-card/40 hover:text-foreground",
-                ].join(" ")}
-              >
-                {label}
-                {active && <span className="absolute inset-x-3 -bottom-0.5 mx-auto h-px rounded-full bg-primary shadow-[0_0_10px_var(--primary)]" />}
-              </a>
-            );
-          })}
-        </nav>
+          <div className="hidden items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/35 xl:flex">
+            <span className="signal-dot" />
+            System online
+          </div>
+        </div>
 
-        <a href="/contact" onClick={(event) => navigate(event, "/contact")}
-          className="relative z-10 hidden items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-[12px] font-black text-primary-foreground shadow-lg shadow-primary/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-primary/30 lg:inline-flex">
-          Let’s connect <span>↗</span>
+        <a
+          href="/contact"
+          onClick={(event) => navigate(event, "/contact")}
+          className="hud-button relative z-10 hidden items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-[11px] font-black text-primary-foreground shadow-[0_12px_30px_oklch(0.69_0.28_300_/_0.18)] transition hover:-translate-y-0.5 lg:inline-flex"
+        >
+          Open channel <span aria-hidden>↗</span>
         </a>
 
-        <button type="button" className="relative z-10 inline-flex rounded-xl border border-border/80 bg-card/75 px-3.5 py-2.5 text-xs font-black backdrop-blur md:hidden"
-          aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}>
+        <button
+          type="button"
+          className="relative z-10 inline-flex rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-[11px] font-black text-white md:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen((value) => !value)}
+        >
           {open ? "Close" : "Menu"}
         </button>
       </div>
 
       {open && (
-        <nav id="mobile-navigation" className="pointer-events-auto relative mx-auto mt-2 max-w-7xl rounded-2xl border border-border/80 bg-background/92 p-2 shadow-2xl backdrop-blur-2xl md:hidden">
+        <nav id="mobile-navigation" className="pointer-events-auto relative mx-auto mt-2 max-w-7xl rounded-2xl border border-primary/15 bg-[#05040a]/92 p-2 shadow-2xl shadow-black/50 backdrop-blur-2xl md:hidden">
           <div className="flex flex-col gap-1">
             {links.map(([href, label]) => (
-              <a key={href} href={href} onClick={(event) => navigate(event, href)}
-                className={`rounded-xl px-4 py-3 text-sm font-bold ${isActive(href) ? "bg-foreground text-background" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}>
+              <a
+                key={href}
+                href={href}
+                onClick={(event) => navigate(event, href)}
+                className={[
+                  "rounded-xl px-4 py-3 text-sm font-bold transition",
+                  isActive(href) ? "bg-primary/12 text-primary" : "text-white/55 hover:bg-white/[0.04] hover:text-white",
+                ].join(" ")}
+              >
                 {label}
               </a>
             ))}
-            <a href="/contact" onClick={(event) => navigate(event, "/contact")}
-              className="mt-1 rounded-xl bg-primary px-4 py-3 text-center text-sm font-black text-primary-foreground">
-              Let’s connect ↗
+            <a
+              href="/contact"
+              onClick={(event) => navigate(event, "/contact")}
+              className="mt-1 rounded-xl bg-primary px-4 py-3 text-center text-sm font-black text-primary-foreground"
+            >
+              Open communication ↗
             </a>
           </div>
         </nav>

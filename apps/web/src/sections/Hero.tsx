@@ -13,107 +13,123 @@ function Hero() {
 
   const name = profile?.name ?? "Gabriella Uktolseja";
   const headline = profile?.headline ?? "Undergraduate Software Engineer";
-  const bio = profile?.bio ?? "I build thoughtful full-stack web applications while continuously strengthening my software engineering fundamentals.";
+  const bio =
+    profile?.bio ??
+    "I build thoughtful full-stack web applications while continuously strengthening my software engineering fundamentals.";
 
   return (
-    <section id="hero" className="relative overflow-hidden border-b border-border/70 bg-background">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_18%,oklch(0.62_0.25_293_/_0.18),transparent_30%),radial-gradient(circle_at_8%_52%,oklch(0.78_0.12_293_/_0.09),transparent_25%)]" />
-      <div className="hero-orbit pointer-events-none absolute right-[2%] top-24 -z-10 size-80 rounded-full border border-primary/10" />
-      <div className="hero-orbit hero-orbit-delay pointer-events-none absolute right-[6%] top-28 -z-10 size-60 rounded-full border border-primary/10" />
+    <section id="hero" className="space-section min-h-[calc(100svh-5.5rem)]">
+      <div className="nebula pointer-events-none -right-20 top-24 size-[30rem]" />
+      <div className="nebula pointer-events-none left-[-12rem] top-[45%] size-[26rem]" />
+      <div className="hero-orbit pointer-events-none absolute right-[3%] top-20 size-96 rounded-full border border-primary/12" />
+      <div className="hero-orbit hero-orbit-delay pointer-events-none absolute right-[7%] top-28 size-72 rounded-full border border-primary/10" />
+      <div className="pointer-events-none absolute right-[15%] top-16 hidden size-2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.75)] lg:block" />
 
-      <div className="mx-auto grid min-h-[calc(100svh-5.5rem)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-7 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 lg:px-10 lg:py-20">
+      <div className="space-container grid items-center gap-12 px-5 py-14 sm:px-7 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-10 lg:py-24">
         <div className="max-w-3xl">
           <Reveal>
-            <div className="animate-pulse-ring inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card/75 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-primary backdrop-blur">
-              <span className="size-1.5 rounded-full bg-primary" />
-              Open to internship opportunities
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/18 bg-primary/[0.07] px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary backdrop-blur-xl">
+              <span className="signal-dot" />
+              Signal active / open to internships
             </div>
           </Reveal>
 
           <Reveal delay={70}>
-            <p className="mt-7 text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground sm:mt-8 sm:text-sm">
-              {headline}
-            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-white/30">
+              <span className="hud-label">Mission 01</span>
+              <span className="size-1 rounded-full bg-white/15" />
+              <span className="hud-label">Build / learn / iterate</span>
+            </div>
           </Reveal>
 
           <Reveal delay={130}>
-            <h1 className="mt-4 max-w-4xl text-[3.05rem] font-black leading-[0.9] tracking-[-0.075em] sm:text-6xl lg:text-[5.45rem]">
+            <h1 className="mt-5 max-w-4xl text-[3.35rem] font-black leading-[0.88] tracking-[-0.085em] text-white sm:text-6xl lg:text-[6.2rem]">
               Bridging Ideas
-              <span className="block bg-[linear-gradient(100deg,oklch(0.46_0.28_293),oklch(0.62_0.25_320))] bg-clip-text text-transparent">
+              <span className="block bg-[linear-gradient(105deg,#fff_10%,oklch(0.79_0.16_300)_48%,oklch(0.61_0.26_325))] bg-clip-text text-transparent">
                 to Digital Experiences.
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={210}>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-8 sm:text-lg">
-              Hi, I’m <span className="font-semibold text-foreground">{name}</span>. {bio}
+            <p className="mt-7 max-w-2xl text-base leading-7 text-white/53 sm:mt-8 sm:text-lg sm:leading-8">
+              Hi, I’m <span className="font-semibold text-white">{name}</span>. {bio}
             </p>
           </Reveal>
 
           <Reveal delay={270}>
-            <div className="mt-8 flex flex-wrap gap-3 sm:mt-9">
-              <a href="/projects" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-bold text-background shadow-xl shadow-foreground/10 transition-all hover:-translate-y-1 hover:shadow-2xl">
-                Explore projects <span aria-hidden>↗</span>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="/projects" className="hud-button inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-black text-primary-foreground shadow-[0_18px_45px_oklch(0.69_0.28_300_/_0.18)] transition hover:-translate-y-1">
+                Explore the mission <span aria-hidden>↗</span>
               </a>
-              <a href="/contact" className="inline-flex items-center rounded-full border border-border bg-card/80 px-5 py-3 text-sm font-bold transition-all hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/5">
-                Get in touch
+              <a href="/experience" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-5 py-3 text-sm font-bold text-white/75 transition hover:-translate-y-1 hover:border-primary/25 hover:text-white">
+                Review my journey <span aria-hidden>→</span>
               </a>
             </div>
           </Reveal>
 
           <Reveal delay={330}>
-            <div className="mt-10 grid max-w-2xl grid-cols-1 border-y border-border/80 py-5 sm:mt-12 sm:grid-cols-3">
-              {[
-                ["01", "Full-stack", "Web development"],
-                ["02", "TypeScript", "Primary language"],
-                ["03", "Hands-on", "Build & learn"],
-              ].map(([number, title, description], index) => (
-                <div
-                  key={number}
-                  className={
-                    index === 1
-                      ? "border-border/80 py-4 sm:border-x sm:px-5 sm:py-0 lg:px-8"
-                      : index === 0
-                        ? "pb-4 sm:pr-5 sm:pb-0 lg:pr-8"
-                        : "pt-4 sm:pl-5 sm:pt-0 lg:pl-8"
-                  }
-                >
-                  <p className="text-[10px] font-bold text-primary">{number}</p>
-                  <p className="mt-2 text-sm font-bold sm:text-base">{title}</p>
-                  <p className="mt-1 text-[11px] text-muted-foreground sm:text-xs">{description}</p>
-                </div>
-              ))}
+            <div className="cosmic-panel scanline mt-10 rounded-[1.6rem] p-4 sm:mt-12 sm:p-5">
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[
+                  ["01", "Full-stack", "Web development"],
+                  ["02", "TypeScript", "Primary language"],
+                  ["03", "Hands-on", "Build & learn"],
+                ].map(([number, title, description]) => (
+                  <div key={number} className="relative flex gap-3 border-white/8 sm:block sm:border-r sm:last:border-r-0 sm:pr-5 sm:last:pr-0">
+                    <span className="hud-number text-[10px] font-bold text-primary">{number}</span>
+                    <div>
+                      <p className="text-sm font-black text-white">{title}</p>
+                      <p className="mt-1 text-[10px] leading-5 text-white/35">{description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
 
-        <Reveal delay={180} className="mx-auto w-full max-w-[19rem] lg:max-w-[21rem]">
+        <Reveal delay={180} className="mx-auto w-full max-w-[22rem] lg:max-w-[25rem]">
           <div className="relative">
-            <div className="absolute -inset-6 rounded-[3.25rem] bg-primary/14 blur-3xl" />
-            <div className="relative rounded-[2.75rem] border border-foreground/10 bg-foreground p-2 shadow-2xl shadow-primary/15">
-              <div className="relative overflow-hidden rounded-[2.35rem] bg-black">
-                <img
-                  src={profile?.imageUrl ?? ""}
-                  alt={name}
-                  className="aspect-[4/5] w-full object-cover object-top transition duration-1000 hover:scale-[1.02]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-primary/10" />
-                <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-white backdrop-blur-xl">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <p className="text-[9px] font-black uppercase tracking-[0.18em] text-white/50">Current chapter</p>
-                      <p className="mt-1 text-sm font-bold">Learning by building.</p>
+            <div className="pointer-events-none absolute -inset-10 rounded-full bg-primary/10 blur-3xl" />
+            <div className="relative">
+              <div className="absolute inset-[-1.2rem] rounded-[2.7rem] border border-primary/10" />
+              <div className="absolute inset-[-2.6rem] rounded-full border border-primary/8" />
+              <div className="cosmic-panel relative rounded-[2.3rem] p-2">
+                <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
+                  <img
+                    src={profile?.imageUrl ?? ""}
+                    alt={name}
+                    className="aspect-[4/5] w-full object-cover object-top transition duration-1000 hover:scale-[1.025]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(89,46,140,0.03),transparent_38%,rgba(0,0,0,0.8))]" />
+                  <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
+                    <span className="hud-label rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-white/50 backdrop-blur">
+                      Portrait / 01
+                    </span>
+                    <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">
+                      Active
+                    </span>
+                  </div>
+                  <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-xl">
+                    <div className="flex items-end justify-between gap-4">
+                      <div>
+                        <p className="hud-label text-white/35">Current chapter</p>
+                        <p className="mt-1 text-lg font-black text-white">Learning by building.</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="hud-label text-white/25">Status</p>
+                        <p className="mt-1 text-xs font-black text-primary">ONLINE</p>
+                      </div>
                     </div>
-                    <span className="grid size-8 place-items-center rounded-full bg-primary text-xs font-black text-white">01</span>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="animate-float absolute -bottom-4 -left-4 rounded-2xl border border-border bg-card px-4 py-3 shadow-xl">
-              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Based in</p>
-              <p className="mt-1 text-sm font-bold">{profile?.location ?? "Bekasi, Indonesia"}</p>
+              <div className="animate-float absolute -bottom-5 -left-5 rounded-2xl border border-primary/15 bg-[#08050f]/88 px-4 py-3 shadow-2xl shadow-black/40 backdrop-blur-xl">
+                <p className="hud-label text-primary">Coordinates</p>
+                <p className="mt-1 text-sm font-bold text-white">{profile?.location ?? "Bekasi, Indonesia"}</p>
+              </div>
             </div>
           </div>
         </Reveal>

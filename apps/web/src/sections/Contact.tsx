@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import Reveal from "@/components/Reveal";
 import Section from "@/components/Section";
 import { getProfile } from "@/data/portfolio";
 import type { Profile } from "@/types/portfolio";
@@ -11,121 +12,88 @@ function Contact() {
     void getProfile().then(setProfile).catch(() => undefined);
   }, []);
 
-  return (
-    <Section id="contact" eyebrow="Contact" title="Let’s connect.">
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="overflow-hidden rounded-[2rem] border border-border bg-card">
-          <div className="aspect-[4/5] overflow-hidden bg-muted">
-            {profile?.imageUrl ? (
-              <img
-                src={profile.imageUrl}
-                alt={profile.name}
-                className="size-full object-cover object-top"
-              />
-            ) : (
-              <div className="grid size-full place-items-center text-sm text-muted-foreground">
-                Profile photo
-              </div>
-            )}
-          </div>
-          <div className="p-6 sm:p-7">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
-              A little about me
-            </p>
-            <h3 className="mt-3 text-2xl font-black tracking-tight">
-              {profile?.name ?? "Gabriella Uktolseja"}
-            </h3>
-            <p className="mt-1 text-sm font-semibold text-muted-foreground">
-              {profile?.headline ?? "Undergraduate Software Engineer"}
-            </p>
-            <p className="mt-5 text-sm leading-7 text-muted-foreground">
-              I’m a Computer Science student who enjoys turning ideas into
-              thoughtful digital experiences. I like learning through hands-on
-              projects, exploring new technologies, and building things that
-              are useful in the real world.
-            </p>
-            {profile?.location && (
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                Based in {profile.location}
-              </p>
-            )}
-          </div>
-        </div>
+  const profileName = profile?.name ?? "Gabriella Uktolseja";
+  const profileHeadline = profile?.headline ?? "Undergraduate Software Engineer";
 
-        <div className="flex flex-col gap-8">
-          <div className="rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
-            <p className="text-sm font-semibold text-primary-foreground/70">
-              Open to meaningful connections
-            </p>
-            <h3 className="mt-3 max-w-xl text-3xl font-black tracking-tight sm:text-4xl">
-              Let’s talk about opportunities, ideas, and things worth building.
-            </h3>
-            <p className="mt-5 max-w-xl leading-7 text-primary-foreground/75">
-              Whether you want to discuss a project, an internship opportunity,
-              collaboration, or simply connect professionally, you can reach me
-              through any of the channels here.
-            </p>
+  return (
+    <Section id="contact" eyebrow="Communication deck" title="Open a channel.">
+      <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+        <Reveal className="cosmic-panel overflow-hidden rounded-[2rem]">
+          <div className="relative">
+            <div className="aspect-[4/5] overflow-hidden bg-black">
+              {profile?.imageUrl ? (
+                <img src={profile.imageUrl} alt={profileName} className="size-full object-cover object-top transition duration-1000 hover:scale-[1.02]" />
+              ) : (
+                <div className="grid size-full place-items-center text-sm text-white/30">Profile photo</div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-primary/6" />
+              <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
+                <span className="hud-label rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-white/45 backdrop-blur">Profile / 01</span>
+                <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">Online</span>
+              </div>
+            </div>
+
+            <div className="relative p-6 sm:p-7">
+              <p className="hud-label text-primary">Pilot profile</p>
+              <h3 className="mt-3 text-2xl font-black tracking-tight text-white">{profileName}</h3>
+              <p className="mt-1 text-sm font-semibold text-white/45">{profileHeadline}</p>
+              <p className="mt-5 text-sm leading-7 text-white/41">A computer science student who enjoys turning ideas into thoughtful digital experiences, learning through hands-on projects, and building things that are useful in the real world.</p>
+              {profile?.location && <p className="mt-5 hud-label text-white/24">Coordinates / {profile.location}</p>}
+            </div>
           </div>
+        </Reveal>
+
+        <div className="space-y-5">
+          <Reveal className="cosmic-panel scanline rounded-[2rem] bg-[radial-gradient(circle_at_82%_10%,oklch(0.60_0.30_300_/_0.20),transparent_30rem),linear-gradient(145deg,#11081a,#05030a)] p-7 sm:p-10">
+            <div className="relative">
+              <div className="flex items-center gap-2.5">
+                <span className="signal-dot" />
+                <span className="hud-label text-primary">Transmission ready</span>
+              </div>
+              <h3 className="mt-4 max-w-xl text-3xl font-black tracking-[-0.055em] text-white sm:text-4xl">Let’s talk about opportunities, ideas, and things worth building.</h3>
+              <p className="mt-5 max-w-xl leading-7 text-white/43">Whether it’s an internship opportunity, collaboration, project discussion, or a professional introduction, these channels go directly to me.</p>
+            </div>
+          </Reveal>
 
           <div className="grid gap-4 sm:grid-cols-2">
             {profile?.email && (
-              <a
-                href={`mailto:${profile.email}`}
-                className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary"
-              >
-                <p className="text-sm font-semibold text-muted-foreground">Email</p>
-                <p className="mt-3 break-all font-semibold group-hover:underline">
-                  {profile.email}
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Send me a direct message
-                </p>
-              </a>
+              <Reveal className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
+                <a href={"mailto:" + profile.email} className="block">
+                  <p className="hud-label text-primary">Email / 01</p>
+                  <p className="mt-3 break-all text-sm font-bold text-white">{profile.email}</p>
+                  <p className="mt-2 text-xs leading-5 text-white/28">Send a direct message ↗</p>
+                </a>
+              </Reveal>
             )}
 
             {profile?.linkedinUrl && (
-              <a
-                href={profile.linkedinUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary"
-              >
-                <p className="text-sm font-semibold text-muted-foreground">LinkedIn</p>
-                <p className="mt-3 font-semibold group-hover:underline">Connect professionally ↗</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Experience, education, and professional network
-                </p>
-              </a>
+              <Reveal delay={60} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
+                <a href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="block">
+                  <p className="hud-label text-primary">LinkedIn / 02</p>
+                  <p className="mt-3 text-sm font-bold text-white">Connect professionally ↗</p>
+                  <p className="mt-2 text-xs leading-5 text-white/28">Experience, education, and network</p>
+                </a>
+              </Reveal>
             )}
 
             {profile?.githubUrl && (
-              <a
-                href={profile.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary"
-              >
-                <p className="text-sm font-semibold text-muted-foreground">GitHub</p>
-                <p className="mt-3 font-semibold group-hover:underline">Explore my work ↗</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Projects, code, and ongoing experiments
-                </p>
-              </a>
+              <Reveal delay={120} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
+                <a href={profile.githubUrl} target="_blank" rel="noreferrer" className="block">
+                  <p className="hud-label text-primary">GitHub / 03</p>
+                  <p className="mt-3 text-sm font-bold text-white">Explore my work ↗</p>
+                  <p className="mt-2 text-xs leading-5 text-white/28">Projects, code, and experiments</p>
+                </a>
+              </Reveal>
             )}
 
             {profile?.whatsappUrl && (
-              <a
-                href={profile.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary"
-              >
-                <p className="text-sm font-semibold text-muted-foreground">WhatsApp</p>
-                <p className="mt-3 font-semibold group-hover:underline">Message me ↗</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  A quick way to start a conversation
-                </p>
-              </a>
+              <Reveal delay={180} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/22">
+                <a href={profile.whatsappUrl} target="_blank" rel="noreferrer" className="block">
+                  <p className="hud-label text-primary">WhatsApp / 04</p>
+                  <p className="mt-3 text-sm font-bold text-white">Start a quick chat ↗</p>
+                  <p className="mt-2 text-xs leading-5 text-white/28">A direct conversation channel</p>
+                </a>
+              </Reveal>
             )}
           </div>
         </div>
