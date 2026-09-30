@@ -56,10 +56,10 @@ function Hero() {
           <Reveal delay={270}>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="/projects" className="hud-button inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-black text-primary-foreground shadow-[0_18px_45px_oklch(0.69_0.28_300_/_0.18)] transition hover:-translate-y-1">
-                Explore the mission <span aria-hidden>↗</span>
+                Explore projects <span aria-hidden>↗</span>
               </a>
               <a href="/experience" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-5 py-3 text-sm font-bold text-white/75 transition hover:-translate-y-1 hover:border-primary/25 hover:text-white">
-                Review my journey <span aria-hidden>→</span>
+                View experience <span aria-hidden>→</span>
               </a>
             </div>
           </Reveal>
@@ -85,7 +85,7 @@ function Hero() {
                       Profile
                     </span>
                     <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">
-                      Active
+                      On duty
                     </span>
                   </div>
                   <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-xl">
