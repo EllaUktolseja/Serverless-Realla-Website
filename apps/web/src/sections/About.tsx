@@ -43,7 +43,7 @@ function About() {
                 </p>
                 <div className="mt-7 flex flex-wrap gap-2">
                   {["Curious by default", "Hands-on builder", "Always learning"].map((item) => (
-                    <span key={item} className="rounded-full border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] px-3.5 py-2 text-xs font-bold text-[#261b35]/76 transition hover:border-primary/25 hover:bg-primary/8 hover:text-white">
+                    <span key={item} className="rounded-full border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] px-3.5 py-2 text-xs font-bold text-[#261b35]/82 transition hover:border-primary/25 hover:bg-primary/8 hover:text-[#160f20]">
                       {item}
                     </span>
                   ))}
@@ -52,12 +52,12 @@ function About() {
 
               <div className="rounded-2xl border border-[#2f1b46]/10 bg-[#140d1d]/[0.03] p-5">
                 <p className="hud-label text-primary">What matters</p>
-                <p className="mt-3 text-sm leading-6 text-[#2f223e]/62">
+                <p className="mt-3 text-sm leading-6 text-[#2f223e]/72">
                   I’m early in my professional journey, so this portfolio is designed to show the work, the thinking behind it, and what I’m learning along the way.
                 </p>
                 <div className="mt-6 border-t border-[#2f1b46]/10 pt-4">
                   <p className="text-xs font-semibold text-[#160f20]/80">Based in {profile?.location || "Bekasi, Indonesia"}</p>
-                  <p className="mt-1 text-xs text-[#2f223e]/48">Open to learning, collaboration, and new opportunities.</p>
+                  <p className="mt-1 text-xs text-[#2f223e]/58">Open to learning, collaboration, and new opportunities.</p>
                 </div>
               </div>
             </div>
@@ -71,19 +71,19 @@ function About() {
                 <p className="hud-label text-primary">Operating system</p>
                 <h3 className="mt-2 text-xl font-black text-white">From concept to craft.</h3>
               </div>
-              <span className="hud-number text-[10px] font-bold text-white/25">03</span>
+              <span className="hud-number text-[10px] font-bold text-[#160f20]/55">03</span>
             </div>
 
-            <div className="divide-y divide-white/8">
+            <div className="divide-y divide-[#2f1b46]/10">
               {focusAreas.map(([number, title, description]) => (
                 <div key={number} className="group grid gap-3 py-6 sm:grid-cols-[2.5rem_1fr]">
                   <span className="hud-number text-[10px] font-bold text-primary">{number}</span>
                   <div>
                     <div className="flex items-center justify-between gap-3">
                       <h4 className="text-sm font-black text-white">{title}</h4>
-                      <span className="text-xs text-[#2f223e]/20 transition duration-300 group-hover:translate-x-1 group-hover:text-primary">↗</span>
+                      <span className="text-xs text-[#2f223e]/45 transition duration-300 group-hover:translate-x-1 group-hover:text-primary">↗</span>
                     </div>
-                    <p className="mt-2 max-w-sm text-sm leading-6 text-[#2f223e]/60">{description}</p>
+                    <p className="mt-2 max-w-sm text-sm leading-6 text-[#2f223e]/72">{description}</p>
                   </div>
                 </div>
               ))}
