@@ -75,18 +75,3 @@ export interface Project {
   timeline?: ProjectTimelineItem[];
 }
 
-export interface ContactInput {
-  name: string;
-  email: string;
-  subject?: string;
-  message: string;
-}
-
-export interface ApiResponse<T> {
-  success: boolean;
-  data: T;
-  error?: {
-    code: string;
-    message: string;
-  };
-}
