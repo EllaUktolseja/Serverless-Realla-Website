@@ -15,86 +15,133 @@ function Contact() {
   const profileName = profile?.name ?? "Gabriella Uktolseja";
   const profileHeadline = profile?.headline ?? "Undergraduate Software Engineer";
 
+  const channels = [
+    profile?.email
+      ? {
+          label: "Email",
+          number: "01",
+          title: profile.email,
+          description: "For internship opportunities, introductions, and project conversations.",
+          href: "mailto:" + profile.email,
+        }
+      : null,
+    profile?.linkedinUrl
+      ? {
+          label: "LinkedIn",
+          number: "02",
+          title: "Connect professionally",
+          description: "Experience, education, and professional network.",
+          href: profile.linkedinUrl,
+        }
+      : null,
+    profile?.githubUrl
+      ? {
+          label: "GitHub",
+          number: "03",
+          title: "Explore my work",
+          description: "Projects, source code, and experiments.",
+          href: profile.githubUrl,
+        }
+      : null,
+    profile?.whatsappUrl
+      ? {
+          label: "WhatsApp",
+          number: "04",
+          title: "Start a conversation",
+          description: "A direct channel for a quick professional chat.",
+          href: profile.whatsappUrl,
+        }
+      : null,
+  ].filter(Boolean) as Array<{
+    label: string;
+    number: string;
+    title: string;
+    description: string;
+    href: string;
+  }>;
+
   return (
-    <Section id="contact" eyebrow="Contact" title="Open a channel.">
-      <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-        <Reveal className="cosmic-panel overflow-hidden rounded-[2rem]">
-          <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden bg-black">
+    <Section id="contact" eyebrow="Contact" title="Let’s make the next conversation easy.">
+      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+        <Reveal className="cosmic-panel overflow-hidden rounded-[2.2rem]">
+          <div className="relative bg-[#09070e] p-2">
+            <div className="pointer-events-none absolute inset-[-5rem] rounded-full bg-primary/10 blur-3xl" />
+            <div className="pointer-events-none absolute right-8 top-8 size-36 rounded-full border border-primary/20" />
+            <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
               {profile?.imageUrl ? (
-                <img src={profile.imageUrl} alt={profileName} className="size-full object-cover object-top transition duration-700 hover:scale-[1.02]" loading="lazy" />
+                <img
+                  src={profile.imageUrl}
+                  alt={profileName}
+                  className="aspect-[4/5] w-full object-cover object-top"
+                  loading="lazy"
+                />
               ) : (
-                <div className="grid size-full place-items-center text-sm text-white/70">Profile photo</div>
+                <div className="grid aspect-[4/5] place-items-center text-sm text-white/70">Profile photo</div>
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-primary/6" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
               <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-3">
-                <span className="hud-label rounded-full border border-white/20 bg-black/45 px-3 py-1.5 text-white/82 backdrop-blur">Profile / 01</span>
-                <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">Online</span>
+                <span className="hud-label rounded-full border border-white/15 bg-black/45 px-3 py-1.5 text-white/82 backdrop-blur">Profile</span>
+                <span className="hud-label rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-primary backdrop-blur">Available</span>
+              </div>
+
+              <div className="absolute inset-x-5 bottom-5">
+                <p className="hud-label text-white/55">Gabriella / software engineering</p>
+                <h3 className="mt-2 text-3xl font-black tracking-[-0.05em] text-white sm:text-4xl">{profileName}</h3>
+                <p className="mt-1 text-sm font-semibold text-white/72">{profileHeadline}</p>
               </div>
             </div>
+          </div>
 
-            <div className="relative p-6 sm:p-7">
-              <p className="hud-label text-primary">Profile</p>
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-[#15121b]">{profileName}</h3>
-              <p className="mt-1 text-sm font-semibold text-[#15121b]/72">{profileHeadline}</p>
-              <p className="mt-5 text-sm leading-7 text-[#3f3747]/82">A computer science student who enjoys turning ideas into thoughtful digital experiences, learning through hands-on projects, and building things that are useful in the real world.</p>
-              {profile?.location && <p className="mt-5 hud-label text-[#4a4253]/72">{profile.location}</p>}
+          <div className="p-6 sm:p-7">
+            <div className="flex items-center justify-between gap-4">
+              <p className="hud-label text-primary">Based in</p>
+              <span className="hud-label text-[#4a4253]/58">{profile?.location ?? "Bekasi, Indonesia"}</span>
             </div>
+            <p className="mt-4 text-sm leading-7 text-[#3f3747]/82">
+              I’m open to internship opportunities, collaboration, and conversations around products, software, and the work behind them.
+            </p>
           </div>
         </Reveal>
 
         <div className="space-y-5">
-          <Reveal className="cosmic-panel rounded-[2rem] p-7 sm:p-10">
-            <div className="relative">
+          <Reveal className="cosmic-panel rounded-[2.2rem] p-7 sm:p-9">
+            <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2.5">
                 <span className="signal-dot" />
-                <span className="hud-label text-primary">Let’s talk</span>
+                <span className="hud-label text-primary">Open channel</span>
               </div>
-              <h3 className="mt-4 max-w-xl text-3xl font-black tracking-[-0.055em] text-[#15121b] sm:text-4xl">Opportunities, ideas, and things worth building.</h3>
-              <p className="mt-5 max-w-xl leading-7 text-[#3f3747]/82">Whether it’s an internship opportunity, collaboration, project discussion, or a professional introduction, these channels go directly to me.</p>
+              <span className="hud-number text-[10px] font-bold text-[#4a4253]/55">Direct contact</span>
             </div>
+
+            <h3 className="mt-5 max-w-2xl text-3xl font-black tracking-[-0.055em] text-[#15121b] sm:text-4xl">
+              One good conversation can start a lot.
+            </h3>
+            <p className="mt-5 max-w-xl leading-7 text-[#3f3747]/82">
+              Choose the channel that fits. No forms, no middle layer — just a direct way to reach me.
+            </p>
           </Reveal>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {profile?.email && (
-              <Reveal className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/25">
-                <a href={"mailto:" + profile.email} className="block">
-                  <p className="hud-label text-primary">Email / 01</p>
-                  <p className="mt-3 break-all text-sm font-bold text-[#15121b]">{profile.email}</p>
-                  <p className="mt-2 text-xs leading-5 text-[#4a4253]/70">Send a direct message ↗</p>
+            {channels.map((channel, index) => (
+              <Reveal key={channel.label} delay={index * 60} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/25">
+                <a
+                  href={channel.href}
+                  target={channel.label === "Email" ? undefined : "_blank"}
+                  rel={channel.label === "Email" ? undefined : "noreferrer"}
+                  className="block"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="hud-label text-primary">{channel.label} / {channel.number}</p>
+                    <span className="grid size-8 place-items-center rounded-full border border-[#302140]/10 bg-[#f4f1f8] text-sm font-black text-[#3b3344] transition group-hover:border-primary/20 group-hover:bg-primary/[0.08] group-hover:text-primary">
+                      ↗
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm font-black text-[#15121b]">{channel.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-[#4a4253]/72">{channel.description}</p>
                 </a>
               </Reveal>
-            )}
-
-            {profile?.linkedinUrl && (
-              <Reveal delay={60} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/25">
-                <a href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="block">
-                  <p className="hud-label text-primary">LinkedIn / 02</p>
-                  <p className="mt-3 text-sm font-bold text-[#15121b]">Connect professionally ↗</p>
-                  <p className="mt-2 text-xs leading-5 text-[#4a4253]/70">Experience, education, and network</p>
-                </a>
-              </Reveal>
-            )}
-
-            {profile?.githubUrl && (
-              <Reveal delay={120} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/25">
-                <a href={profile.githubUrl} target="_blank" rel="noreferrer" className="block">
-                  <p className="hud-label text-primary">GitHub / 03</p>
-                  <p className="mt-3 text-sm font-bold text-[#15121b]">Explore my work ↗</p>
-                  <p className="mt-2 text-xs leading-5 text-[#4a4253]/70">Projects, code, and experiments</p>
-                </a>
-              </Reveal>
-            )}
-
-            {profile?.whatsappUrl && (
-              <Reveal delay={180} className="cosmic-panel group rounded-2xl p-5 transition hover:-translate-y-1 hover:border-primary/25">
-                <a href={profile.whatsappUrl} target="_blank" rel="noreferrer" className="block">
-                  <p className="hud-label text-primary">WhatsApp / 04</p>
-                  <p className="mt-3 text-sm font-bold text-[#15121b]">Start a quick chat ↗</p>
-                  <p className="mt-2 text-xs leading-5 text-[#4a4253]/70">A direct conversation channel</p>
-                </a>
-              </Reveal>
-            )}
+            ))}
           </div>
         </div>
       </div>
