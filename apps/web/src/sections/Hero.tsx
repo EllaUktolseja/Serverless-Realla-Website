@@ -18,13 +18,13 @@ function Hero() {
     "I build thoughtful full-stack web applications while continuously strengthening my software engineering fundamentals.";
 
   return (
-    <section id="hero" className="space-section min-h-[calc(100svh-5.5rem)]">
+    <section id="hero" className="space-section min-h-0 lg:min-h-[calc(100svh-5.5rem)]">
       <div className="nebula pointer-events-none -right-16 top-20 size-[28rem]" />
       <div className="nebula pointer-events-none left-[-12rem] top-[52%] size-[24rem]" />
       <div className="hero-orbit pointer-events-none absolute right-[5%] top-20 size-96 rounded-full border border-primary/10" />
       <div className="pointer-events-none absolute right-[13%] top-32 hidden size-2 rounded-full bg-primary lg:block" />
 
-      <div className="space-container grid items-center gap-10 px-5 py-14 sm:px-7 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-10 lg:py-24">
+      <div className="space-container grid items-center gap-10 px-5 py-12 sm:px-7 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-10 lg:py-24">
         <div className="max-w-3xl">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/18 bg-primary/[0.07] px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary">
@@ -38,7 +38,7 @@ function Hero() {
           </Reveal>
 
           <Reveal delay={130}>
-            <h1 className="mt-5 max-w-4xl text-[3.35rem] font-black leading-[0.9] tracking-[-0.085em] text-[#15121b] sm:text-6xl lg:text-[6.2rem]">
+            <h1 className="mt-5 max-w-4xl text-[3rem] font-black leading-[0.92] tracking-[-0.08em] text-[#15121b] sm:text-6xl lg:text-[6.2rem]">
               Bridging Ideas
               <span className="block bg-[linear-gradient(105deg,#15121b_5%,#6d28d9_55%,#a21caf)] bg-clip-text text-transparent">
                 to Digital Experiences.
@@ -54,7 +54,7 @@ function Hero() {
 
           <Reveal delay={270}>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/projects" className="hud-button inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-black text-white shadow-[0_16px_36px_rgba(124,58,237,0.18)]">
+              <a href="/projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-black text-white shadow-[0_16px_36px_rgba(124,58,237,0.18)] transition hover:-translate-y-0.5">
                 Explore projects <span aria-hidden>↗</span>
               </a>
               <a href="/experience" className="inline-flex items-center gap-2 rounded-full border border-[#302140]/12 bg-white/60 px-5 py-3 text-sm font-bold text-[#2a2230]/78 transition hover:-translate-y-0.5 hover:border-primary/25 hover:text-[#15121b]">
