@@ -18,12 +18,12 @@ function Hero() {
     "I build thoughtful full-stack web applications while continuously strengthening my software engineering fundamentals.";
 
   return (
-    <section id="hero" className="space-section min-h-[calc(100svh-5.5rem)]">
+    <section id="hero" className="space-section starlight-section min-h-[calc(100svh-5.5rem)]">
       <div className="nebula pointer-events-none -right-20 top-24 size-[30rem]" />
       <div className="nebula pointer-events-none left-[-12rem] top-[45%] size-[26rem]" />
       <div className="hero-orbit pointer-events-none absolute right-[3%] top-20 size-96 rounded-full border border-primary/12" />
       <div className="hero-orbit hero-orbit-delay pointer-events-none absolute right-[7%] top-28 size-72 rounded-full border border-primary/10" />
-      <div className="pointer-events-none absolute right-[15%] top-16 hidden size-2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.75)] lg:block" />
+      <div className="pointer-events-none absolute right-[15%] top-16 hidden size-2 rounded-full bg-primary shadow-[0_0_16px_oklch(0.69_0.28_300_/_0.4)] lg:block" />
 
       <div className="space-container grid items-center gap-12 px-5 py-14 sm:px-7 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-10 lg:py-24">
         <div className="max-w-3xl">
@@ -39,17 +39,17 @@ function Hero() {
           </Reveal>
 
           <Reveal delay={130}>
-            <h1 className="mt-5 max-w-4xl text-[3.35rem] font-black leading-[0.88] tracking-[-0.085em] text-white sm:text-6xl lg:text-[6.2rem]">
+            <h1 className="mt-5 max-w-4xl text-[3.35rem] font-black leading-[0.88] tracking-[-0.085em] text-[#160f20] sm:text-6xl lg:text-[6.2rem]">
               Bridging Ideas
-              <span className="block bg-[linear-gradient(105deg,#fff_10%,oklch(0.79_0.16_300)_48%,oklch(0.61_0.26_325))] bg-clip-text text-transparent">
+              <span className="block bg-[linear-gradient(105deg,#160f20_5%,#7c3aed_55%,#a21caf)] bg-clip-text text-transparent">
                 to Digital Experiences.
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={210}>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-white/53 sm:mt-8 sm:text-lg sm:leading-8">
-              Hi, I’m <span className="font-semibold text-white">{name}</span>. {bio}
+            <p className="mt-7 max-w-2xl text-base leading-7 text-[#2f223e]/62 sm:mt-8 sm:text-lg sm:leading-8">
+              Hi, I’m <span className="font-semibold text-[#160f20]">{name}</span>. {bio}
             </p>
           </Reveal>
 
@@ -58,7 +58,7 @@ function Hero() {
               <a href="/projects" className="hud-button inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-black text-primary-foreground shadow-[0_18px_45px_oklch(0.69_0.28_300_/_0.18)] transition hover:-translate-y-1">
                 Explore projects <span aria-hidden>↗</span>
               </a>
-              <a href="/experience" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-5 py-3 text-sm font-bold text-white/75 transition hover:-translate-y-1 hover:border-primary/25 hover:text-white">
+              <a href="/experience" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#3f245c]/[0.035] px-5 py-3 text-sm font-bold text-[#261b35]/76 transition hover:-translate-y-1 hover:border-primary/25 hover:text-[#160f20]">
                 View experience <span aria-hidden>→</span>
               </a>
             </div>
