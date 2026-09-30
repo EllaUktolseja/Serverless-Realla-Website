@@ -37,9 +37,6 @@ function HomePage() {
     return () => window.clearInterval(timer);
   }, [showcaseProjects.length, paused]);
 
-  useEffect(() => {
-    if (active >= showcaseProjects.length && showcaseProjects.length > 0) setActive(0);
-  }, [active, showcaseProjects.length]);
 
   return (
     <>
