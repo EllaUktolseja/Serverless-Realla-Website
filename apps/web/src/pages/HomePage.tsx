@@ -50,9 +50,9 @@ function HomePage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:px-2">
                 <div className="flex items-center gap-2.5">
                   <span className="signal-dot" />
-                  <span className="hud-label text-white/36">Portfolio snapshot</span>
+                  <span className="hud-label text-[#160f20]/62">Portfolio snapshot</span>
                 </div>
-                <span className="hud-number text-[10px] font-bold text-white/25">Current overview</span>
+                <span className="hud-number text-[10px] font-bold text-[#160f20]/55">Current overview</span>
               </div>
               <div className="mt-4 grid grid-cols-2 divide-x divide-white/8 sm:grid-cols-4">
                 {[
@@ -64,7 +64,7 @@ function HomePage() {
                   <div key={title} className="px-3 py-4 first:pl-1 last:pr-1 sm:px-6">
                     <p className="hud-number text-2xl font-black text-primary sm:text-3xl">{number}</p>
                     <p className="mt-1 text-[10px] font-black uppercase tracking-[0.15em] text-white/76">{title}</p>
-                    <p className="mt-1 text-[10px] leading-5 text-white/28 sm:text-xs">{description}</p>
+                    <p className="mt-1 text-[10px] leading-5 text-[#2f223e]/55 sm:text-xs">{description}</p>
                   </div>
                 ))}
               </div>
@@ -89,7 +89,7 @@ function HomePage() {
                     <span className="hud-number text-[9px] font-bold text-primary">{number}</span>
                     <span className="signal-dot transition-transform duration-500 group-hover:scale-125" />
                   </div>
-                  <p className="mt-4 hud-label text-white/32">{title}</p>
+                  <p className="mt-4 hud-label text-[#2f223e]/58">{title}</p>
                   <p className="mt-1.5 text-sm font-bold text-white">{text}</p>
                 </div>
               ))}
