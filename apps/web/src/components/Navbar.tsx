@@ -87,6 +87,7 @@ function Navbar() {
                   key={href}
                   href={href}
                   onClick={(event) => navigate(event, href)}
+                  aria-current={active ? "page" : undefined}
                   className={[
                     "relative rounded-lg px-3.5 py-2 text-[11px] font-bold transition-all lg:px-4",
                     active
