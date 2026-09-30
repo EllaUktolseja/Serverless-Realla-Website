@@ -36,8 +36,8 @@ const experiences: Experience[] = [
     position: "Freshman Chaperone",
     employmentType: "Volunteer",
     location: "Bekasi, Indonesia",
-    startDate: "2025-07-03",
-    endDate: "2025-06-13",
+    startDate: "2025-06-13",
+    endDate: "2025-07-03",
     current: false,
     description:
       "Built and iterated on portfolio, e-commerce, and community product prototypes with a focus on clean architecture and practical user flows.",
