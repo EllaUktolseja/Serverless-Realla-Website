@@ -20,7 +20,7 @@ There is no backend, API server, MongoDB, Docker database, seed process, or runt
 ## Local development
 
 ```powershell
-npm ci
+npm install
 npm run dev
 ```
 
