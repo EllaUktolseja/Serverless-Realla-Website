@@ -50,13 +50,13 @@ function HomePage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:px-2">
                 <div className="flex items-center gap-2.5">
                   <span className="signal-dot" />
-                  <span className="hud-label text-white/36">Flight telemetry / live portfolio index</span>
+                  <span className="hud-label text-white/36">Portfolio snapshot</span>
                 </div>
-                <span className="hud-number text-[10px] font-bold text-white/25">REALLA-01 / EARTH-ORBIT</span>
+                <span className="hud-number text-[10px] font-bold text-white/25">Current overview</span>
               </div>
               <div className="mt-4 grid grid-cols-2 divide-x divide-white/8 sm:grid-cols-4">
                 {[
-                  [String(projects.length).padStart(2, "0"), "Projects", "Selected & in progress"],
+                  [String(projects.length).padStart(2, "0"), "Projects", "Selected & active"],
                   [String(skills.length).padStart(2, "0"), "Tools", "Current toolkit"],
                   [String(experiences.length).padStart(2, "0"), "Roles", "Hands-on experience"],
                   [String(education.length).padStart(2, "0"), "Degree", "Academic foundation"],
@@ -104,7 +104,7 @@ function HomePage() {
           <div className="flex flex-col gap-5 border-b border-white/8 pb-7 sm:flex-row sm:items-end sm:justify-between">
             <Reveal>
               <div>
-                <div className="hud-label flex items-center gap-3 text-primary"><span className="signal-dot" />Selected work / command deck</div>
+                <div className="hud-label flex items-center gap-3 text-primary"><span className="signal-dot" />Selected work</div>
                 <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[-0.055em] text-white sm:text-5xl">
                   A closer look at what I build.
                 </h2>
@@ -140,14 +140,14 @@ function HomePage() {
                           <div className="absolute right-[16%] top-[16%] size-40 rounded-full bg-primary/8 blur-3xl" />
                           <div className="relative flex h-full flex-col justify-between p-7 sm:p-10">
                             <div className="flex items-center justify-between">
-                              <span className="hud-label text-white/30">Target / {String(active + 1).padStart(2, "0")}</span>
+                              <span className="hud-label text-white/30">Project / {String(active + 1).padStart(2, "0")}</span>
                               <span className="rounded-full border border-primary/22 bg-primary/8 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.15em] text-primary">{currentProject.status}</span>
                             </div>
                             <div>
                               <p className="max-w-xl text-5xl font-black leading-[0.9] tracking-[-0.07em] text-white sm:text-6xl">{currentProject.title}</p>
                               <p className="mt-4 max-w-md text-sm leading-6 text-white/42">{currentProject.shortDescription}</p>
                             </div>
-                            <div className="hud-label text-white/22">CASE STUDY VISUAL / DATA SYNTHETIC</div>
+                            <div className="hud-label text-white/22">Project preview</div>
                           </div>
                         </div>
                       )}
@@ -172,7 +172,7 @@ function HomePage() {
                     <div>
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <p className="hud-label text-primary">Case study preview</p>
+                          <p className="hud-label text-primary">Project overview</p>
                           <h3 key={currentProject.slug} className="project-copy-slide mt-2 text-3xl font-black tracking-[-0.045em] text-white sm:text-4xl">{currentProject.title}</h3>
                         </div>
                         <span className="hud-number text-[10px] text-white/22">{String(active + 1).padStart(2, "0")} / {String(showcaseProjects.length).padStart(2, "0")}</span>
@@ -225,11 +225,11 @@ function HomePage() {
             <div className="cosmic-panel scanline overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_82%_15%,oklch(0.56_0.30_300_/_0.16),transparent_28rem),linear-gradient(145deg,#10081a,#05030a)] p-7 sm:p-10 lg:p-12">
               <div className="relative flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
                 <div className="max-w-2xl">
-                  <p className="hud-label text-primary">Next chapter / communication deck</p>
+                  <p className="hud-label text-primary">Get in touch</p>
                   <h2 className="mt-4 text-3xl font-black tracking-[-0.055em] text-white sm:text-5xl">Let’s build something worth remembering.</h2>
                   <p className="mt-5 max-w-xl leading-7 text-white/42">Open to internship opportunities, collaborations, and conversations about software, ideas, and the work behind them.</p>
                 </div>
-                <a href="/contact" className="hud-button inline-flex w-fit rounded-full bg-white px-5 py-3 text-sm font-black text-black transition hover:-translate-y-1 hover:shadow-2xl">Open communication ↗</a>
+                <a href="/contact" className="hud-button inline-flex w-fit rounded-full bg-white px-5 py-3 text-sm font-black text-black transition hover:-translate-y-1 hover:shadow-2xl">Contact me ↗</a>
               </div>
             </div>
           </Reveal>
