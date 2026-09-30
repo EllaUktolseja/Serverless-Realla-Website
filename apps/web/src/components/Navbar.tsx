@@ -14,7 +14,7 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const missionPage = pathname.startsWith("/projects/");
+  const missionPage = false;
 
   useEffect(() => {
     const handlePopState = () => setPathname(window.location.pathname);
