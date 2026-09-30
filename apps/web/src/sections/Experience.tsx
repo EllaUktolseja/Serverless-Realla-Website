@@ -32,11 +32,11 @@ function Experience() {
                   <p className="hud-label text-primary">Experience</p>
                   <h3 className="mt-2 text-xl font-black text-[#160f20]">Hands-on work.</h3>
                 </div>
-                <span className="hud-number text-[10px] font-bold text-[#160f20]/25">{String(experiences.length).padStart(2, "0")} roles</span>
+                <span className="hud-number text-[10px] font-bold text-[#160f20]/55">{String(experiences.length).padStart(2, "0")} roles</span>
               </div>
 
               {experiences.length === 0 ? (
-                <p className="text-[#160f20]/35">No experience data available yet.</p>
+                <p className="text-[#160f20]/60">No experience data available yet.</p>
               ) : (
                 <div className="space-y-9">
                   {experiences.map((experience, index) => (
@@ -46,17 +46,17 @@ function Experience() {
                         <div>
                           <p className="hud-number text-[10px] font-bold text-primary">0{index + 1}</p>
                           <h3 className="mt-1 text-lg font-black text-[#160f20]">{experience.position}</h3>
-                          <p className="mt-1 text-sm font-semibold text-[#160f20]/45">{experience.company}</p>
+                          <p className="mt-1 text-sm font-semibold text-[#160f20]/68">{experience.company}</p>
                         </div>
-                        <p className="hud-label text-[#160f20]/28">
+                        <p className="hud-label text-[#160f20]/58">
                           {new Date(experience.startDate).getFullYear()} — {experience.current ? "Present" : experience.endDate ? new Date(experience.endDate).getFullYear() : "—"}
                         </p>
                       </div>
-                      {experience.location && <p className="mt-3 hud-label text-[#160f20]/23">{experience.location}</p>}
-                      <p className="mt-4 max-w-2xl text-sm leading-7 text-[#160f20]/43">{experience.description}</p>
+                      {experience.location && <p className="mt-3 hud-label text-[#160f20]/52">{experience.location}</p>}
+                      <p className="mt-4 max-w-2xl text-sm leading-7 text-[#160f20]/68">{experience.description}</p>
                       {experience.technologies.length > 0 && (
                         <div className="mt-4 flex flex-wrap gap-2">
-                          {experience.technologies.map((technology) => <span key={technology} className="rounded-full border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] px-3 py-1 text-[11px] font-bold text-[#160f20]/36">{technology}</span>)}
+                          {experience.technologies.map((technology) => <span key={technology} className="rounded-full border border-[#2f1b46]/10 bg-[#3f245c]/[0.035] px-3 py-1 text-[11px] font-bold text-[#160f20]/60">{technology}</span>)}
                         </div>
                       )}
                     </article>
@@ -92,7 +92,7 @@ function Experience() {
                           {new Date(item.startDate).getFullYear()} — {item.endDate ? new Date(item.endDate).getFullYear() : "Present"}
                         </p>
                       </div>
-                      {item.description && <p className="mt-4 text-sm leading-6 text-[#160f20]/40">{item.description}</p>}
+                      {item.description && <p className="mt-4 text-sm leading-6 text-[#160f20]/66">{item.description}</p>}
                     </article>
                   ))
                 )}
