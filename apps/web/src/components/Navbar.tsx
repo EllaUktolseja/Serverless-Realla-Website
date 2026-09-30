@@ -74,7 +74,7 @@ function Navbar() {
           </span>
           <span>
             <span className="block text-[14px] font-black tracking-[-0.02em] text-[#160f20]">Realla<span className="text-primary">.</span></span>
-            <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-white/30 sm:block">Software engineering / on duty</span>
+            <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-[#160f20]/45 sm:block">Software engineering / on duty</span>
           </span>
         </a>
 
@@ -135,6 +135,7 @@ function Navbar() {
                 key={href}
                 href={href}
                 onClick={(event) => navigate(event, href)}
+                aria-current={isActive(href) ? "page" : undefined}
                 className={[
                   "rounded-xl px-4 py-3 text-sm font-bold transition",
                   isActive(href) ? "bg-primary/8 text-primary" : "text-[#160f20]/55 hover:bg-[#3f245c]/[0.035] hover:text-[#160f20]",
